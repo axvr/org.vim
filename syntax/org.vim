@@ -40,6 +40,7 @@ syntax match orgHeading4 /^\s*\*\{4}\s\+.*$/ keepend contains=@Spell,orgTag,orgT
 syntax match orgHeading5 /^\s*\*\{5}\s\+.*$/ keepend contains=@Spell,orgTag,orgTodo
 syntax match orgHeading6 /^\s*\*\{6}\s\+.*$/ keepend contains=@Spell,orgTag,orgTodo
 syntax match orgTag /:\w\{-}:/ contained contains=orgTag
+" TODO make these words configurable
 syntax keyword orgTodo contained TODO NEXT DONE
 
 
@@ -58,7 +59,9 @@ syntax match orgHyperlinkBracketsRight contained "\]\{2}"     conceal
 highlight def link orgHyperlink Underlined
 
 
-" TODO Tables
+" Tables
+syntax match orgTable /^|.*$/ contains=@Spell,orgBold,orgItalic,orgUnderline,orgVerbatim,orgCode
+highlight def link orgTable ColorColumn
 
 
 highlight def orgItalic    term=italic    cterm=italic    gui=italic
