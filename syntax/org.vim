@@ -49,13 +49,11 @@ syntax match orgTimestamp /<\d\{4}-\d\{2}-\d\{2}.\{-}>/ keepend
 highlight def link orgTimestamp Operator
 
 
-" FIXME Hyperlinks
-" - Highlight a link without formatting
-" - Fix issues with italics
-syntax match orgHyperlink  "\[\{2}[^][]*\(\]\[[^][]*\)\?\]\{2}" contains=orgHyperlinkBracketsLeft,orgHyperlinkURL,orgHyperlinkBracketsRight containedin=ALL
-syntax match orgHyperlinkBracketsLeft  contained "\[\{2}#\?"  conceal
-syntax match orgHyperlinkURL           contained "[^][]*\]\[" conceal
-syntax match orgHyperlinkBracketsRight contained "\]\{2}"     conceal
+" Hyperlinks
+syntax match orgHyperlink /\[\{2}\([^][]\{-1,}\]\[\)\?[^][]\{-1,}\]\{2}/ containedin=ALL contains=orgHyperLeft,orgHyperRight,orgHyperURL
+syntax match orgHyperLeft /\[\{2}/ contained conceal
+syntax match orgHyperRight /\]\{2}/ contained conceal
+syntax match orgHyperURL /[^][]\{-1,}\]\[/ contained conceal
 highlight def link orgHyperlink Underlined
 
 

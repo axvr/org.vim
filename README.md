@@ -10,4 +10,4 @@ Org-mode files.
 
 - **TODO**: test with other colorthemes
 - **TODO**: fix italics
-- **TODO**: fix hyperlinks
+- **TODO**: fix spell checker
