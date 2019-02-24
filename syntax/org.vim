@@ -1,29 +1,56 @@
 " =============================================================
 " Description:  Basic Org-mode syntax highlighting
 " Author:       Alex Vear (axvr)
-" Licence:      ISC (2018)
+" Licence:      ISC (2019)
 " =============================================================
 
 if exists("b:current_syntax")
     finish
 endif
 
-" FIXME spell checking does not work on standard lines.
+" Enable spell check for non syntax highlighted text
+syntax spell toplevel
 
-syntax region orgItalic matchgroup=orgItalicDelimiter start="\S\@<=\/\|\/\S\@=" end="\S\@<=\/\|\/\S\@=" keepend contains=@Spell concealends oneline
-syntax region orgBold   matchgroup=orgBoldDelimiter   start="\S\@<=\*\|\*\S\@=" end="\S\@<=\*\|\*\S\@=" keepend contains=@Spell concealends oneline
-syntax region orgUnderline matchgroup=orgUnderlineDelimiter start="\S\@<=_\|_\S\@=" end="\S\@<=_\|_\S\@=" keepend contains=@Spell concealends oneline
-syntax region orgStrikethrough start="\S\@<=+\|+\S\@=" end="\S\@<=+\|+\S\@=" keepend contains=@Spell concealends oneline
+" Bold, underine, italic, etc.
+syntax region orgItalic matchgroup=orgItalicDelimiter start="\S\@<=\/\|\/\S\@=" end="\S\@<=\/\|\/\S\@=" keepend contains=@Spell oneline
+syntax region orgBold   matchgroup=orgBoldDelimiter   start="\S\@<=\*\|\*\S\@=" end="\S\@<=\*\|\*\S\@=" keepend contains=@Spell oneline
+syntax region orgUnderline matchgroup=orgUnderlineDelimiter start="\S\@<=_\|_\S\@=" end="\S\@<=_\|_\S\@=" keepend contains=@Spell oneline
+syntax region orgStrikethrough start="\S\@<=+\|+\S\@=" end="\S\@<=+\|+\S\@=" keepend contains=@Spell oneline
 
+if get(g:, 'org_use_italics', 0)
+    highlight def orgItalic term=italic cterm=italic gui=italic
+else
+    highlight def orgItalic term=none cterm=none gui=none
+endif
+
+highlight def orgBold      term=bold      cterm=bold      gui=bold
+highlight def orgUnderline term=underline cterm=underline gui=underline
+highlight def link orgItalicDelimiter    orgItalic
+highlight def link orgBoldDelimiter      orgBold
+highlight def link orgUnderlineDelimiter orgUnderline
+
+
+" Options
 syntax match  orgOption /^\s*#+\w\+.*$/ keepend
 syntax region orgTitle matchgroup=orgOption start="^\s*#+TITLE:\s*" end="$" keepend oneline
 
-syntax region orgCode     matchgroup=orgCodeDelimiter start="\S\@<==\|=\S\@=" end="\S\@<==\|=\S\@=" keepend concealends oneline
-syntax region orgVerbatim matchgroup=orgVerbatimDelimiter start="\S\@<=\~\|\~\S\@=" end="\S\@<=\~\|\~\S\@=" keepend concealends oneline
+highlight def link orgBlockDelimiter SpecialComment
+highlight def link orgOption Constant
+highlight def link orgTitle Function
+
+
+" Code and vervatim text
+syntax region orgCode     matchgroup=orgCodeDelimiter start="\S\@<==\|=\S\@=" end="\S\@<==\|=\S\@=" keepend oneline
+syntax region orgVerbatim matchgroup=orgVerbatimDelimiter start="\S\@<=\~\|\~\S\@=" end="\S\@<=\~\|\~\S\@=" keepend oneline
 syntax match  orgVerbatim /^\s*: .*$/ keepend
 syntax region orgVerbatim matchgroup=orgBlockDelimiter start="^\s*#+BEGIN_.*"      end="^\s*#+END_.*"      keepend
 syntax region orgCode     matchgroup=orgBlockDelimiter start="^\s*#+BEGIN_SRC"     end="^\s*#+END_SRC"     keepend
 syntax region orgCode     matchgroup=orgBlockDelimiter start="^\s*#+BEGIN_EXAMPLE" end="^\s*#+END_EXAMPLE" keepend
+
+highlight def link orgVerbatim          Delimiter
+highlight def link orgVerbatimDelimiter orgVerbatim
+highlight def link orgCode              Statement
+highlight def link orgCodeDelimiter     orgCode
 
 
 " Comments
@@ -43,8 +70,17 @@ syntax match orgTag /:\w\{-}:/ contained contains=orgTag
 " TODO make these words configurable
 syntax keyword orgTodo contained TODO NEXT DONE
 
+highlight def link orgHeading1 htmlH1
+highlight def link orgHeading2 htmlH2
+highlight def link orgHeading3 htmlH3
+highlight def link orgHeading4 htmlH4
+highlight def link orgHeading5 htmlH5
+highlight def link orgHeading6 htmlH6
+highlight def link orgTodo Todo
+highlight def link orgTag Constant
 
-" Timestamp
+
+" Timestamps
 syntax match orgTimestamp /<\d\{4}-\d\{2}-\d\{2}.\{-}>/ keepend
 highlight def link orgTimestamp Operator
 
@@ -60,32 +96,6 @@ highlight def link orgHyperlink Underlined
 " Tables
 syntax match orgTable /^|.*$/ contains=@Spell,orgBold,orgItalic,orgUnderline,orgVerbatim,orgCode
 highlight def link orgTable ColorColumn
-
-
-highlight def orgItalic    term=italic    cterm=italic    gui=italic
-highlight def orgBold      term=bold      cterm=bold      gui=bold
-highlight def orgUnderline term=underline cterm=underline gui=underline
-highlight def link orgItalicDelimiter    orgItalic
-highlight def link orgBoldDelimiter      orgBold
-highlight def link orgUnderlineDelimiter orgUnderline
-
-highlight def link orgHeading1 htmlH1
-highlight def link orgHeading2 htmlH2
-highlight def link orgHeading3 htmlH3
-highlight def link orgHeading4 htmlH4
-highlight def link orgHeading5 htmlH5
-highlight def link orgHeading6 htmlH6
-highlight def link orgTodo Todo
-highlight def link orgTag Constant
-
-highlight def link orgVerbatim          Delimiter
-highlight def link orgVerbatimDelimiter orgVerbatim
-highlight def link orgCode              Statement
-highlight def link orgCodeDelimiter     orgCode
-
-highlight def link orgBlockDelimiter SpecialComment
-highlight def link orgOption Constant
-highlight def link orgTitle Function
 
 
 let b:current_syntax = 'org'

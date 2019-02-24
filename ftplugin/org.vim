@@ -1,10 +1,11 @@
 " =============================================================
 " Description:  Configure Org-mode folding
 " Author:       Alex Vear (axvr)
-" Licence:      ISC (2018)
+" Licence:      ISC (2019)
 " =============================================================
 
 setlocal conceallevel=2
+setlocal concealcursor=nc
 setlocal commentstring=#%s
 
 function! OrgFold()
