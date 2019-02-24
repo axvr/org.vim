@@ -9,7 +9,7 @@ setlocal commentstring=#%s
 
 function! OrgFold()
     let l:depth = match(getline(v:lnum), '\(^\*\+\)\@<=\( .*$\)\@=')
-    if l:depth > 0 && synIDattr(synID(v:lnum, 1, 1), 'name') ~=# 'orgHeading'
+    if l:depth > 0 && synIDattr(synID(v:lnum, 1, 1), 'name') =~# 'orgHeading'
         return ">" . l:depth
     endif
     return "="
