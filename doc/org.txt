@@ -1,0 +1,51 @@
+*org.txt*       A minimal Org-mode package providing only the necessities.
+
+
+                      Org.vim Manual by Alex Vear~
+
+
+Welcome to the org.vim user manual.                     *org*  *org.vim*  *vim-org*
+
+    1. Introduction ............................... |org-intro|
+    2. Installation ............................... |org-install|
+    3. Basic syntax ............................... |org-syntax|
+    4. Configuration .............................. |org-configuration|
+
+==============================================================================
+ 1. INTRODUCTION                                                   *org-intro*
+
+Org.vim is a minimal Org-mode package for Vim. It provides only the absolute
+necessities (e.g. syntax highlighting and folding) at a high standard.
+
+The main goal of this package is to replicate Vim's default Markdown editing
+experience for Org-mode files.
+
+==============================================================================
+ 2. INSTALLATION                                                  *org-install*
+
+WIP.
+
+==============================================================================
+ 3. BASIC SYNTAX                                                   *org-syntax*
+
+WIP.
+
+==============================================================================
+ 4. CONFIGURATION                                           *org-configuration*
+
+                                                          *'g:org_use_italics'*
+Value: numeric~
+Default: 0~
+
+Display italic org-mode markup (e.g. `/this is italic org-mode markup/`) using
+the italic variant of your font.
+
+Note: this option is disabled by default because some terminals and monospaced
+fonts don't support the use of italics.
+
+To enable this feature place the following line in your vimrc:
+>
+    let g:org_use_italics = 1
+<
+
+vim:et:ts=8:sts=4:sw=4:tw=78:ft=help:norl:
