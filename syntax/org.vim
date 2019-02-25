@@ -94,8 +94,10 @@ highlight def link orgTag Type
 
 
 " Timestamps
-syntax match orgTimestamp /<\d\{4}-\d\{2}-\d\{2}.\{-}>/ keepend
-highlight def link orgTimestamp Operator
+syntax match orgTimestampActive /<\d\{4}-\d\{2}-\d\{2}.\{-}>/ keepend
+syntax match orgTimestampInactive /\[\d\{4}-\d\{2}-\d\{2}.\{-}\]/ keepend
+highlight def link orgTimestampActive Operator
+highlight def link orgTimestampInactive Comment
 
 
 " Hyperlinks
