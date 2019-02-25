@@ -1,6 +1,6 @@
 " =============================================================
 " Description:  Basic Org-mode syntax highlighting
-" Author:       Alex Vear (axvr)
+" Author:       Alex Vear (axvr) <av@axvr.io>
 " Licence:      ISC (2019)
 " =============================================================
 
