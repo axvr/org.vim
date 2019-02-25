@@ -1,4 +1,4 @@
-*org.txt*       A minimal Org-mode package providing only the necessities.
+*org.txt*            A minimal Org-mode package providing only the necessities.
 
 
                       Org.vim Manual by Alex Vear~
@@ -12,7 +12,7 @@ Welcome to the org.vim user manual.                     *org*  *org.vim*  *vim-o
     4. Configuration .............................. |org-configuration|
 
 ==============================================================================
- 1. INTRODUCTION                                                   *org-intro*
+ 1. INTRODUCTION                                                    *org-intro*
 
 Org.vim is a minimal Org-mode package for Vim. It provides only the absolute
 necessities (e.g. syntax highlighting and folding) at a high standard.
@@ -33,6 +33,18 @@ WIP.
 ==============================================================================
  4. CONFIGURATION                                           *org-configuration*
 
+                                                       *'g:org_state_keywords'*
+Value: list of strings~
+Default: ['TODO', 'NEXT', 'DONE']~
+
+To change the default state keywords set this variable to contain a list of
+strings you would like to use.
+>
+    let g:org_state_keywords = ['TODO', 'WAIT', 'DOING', 'DONE', 'CANCELED']
+<
+Note: state keywords are case sensitive.
+
+------------------------------------------------------------------------------
                                                           *'g:org_use_italics'*
 Value: numeric~
 Default: 0~
@@ -47,5 +59,17 @@ To enable this feature place the following line in your vimrc:
 >
     let g:org_use_italics = 1
 <
+------------------------------------------------------------------------------
+                                           *'g:org_highlight_table_background'*
+Value: numeric~
+Default: 1~
 
+This option allows you to disable the highlighting of table backgrounds, as
+the default may not look great with your chosen `colorscheme`.
+
+To disable this feature place the following line in your vimrc:
+>
+    let g:org_highlight_table_background = 0
+<
+------------------------------------------------------------------------------
 vim:et:ts=8:sts=4:sw=4:tw=78:ft=help:norl:

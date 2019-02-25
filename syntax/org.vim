@@ -67,8 +67,8 @@ syntax match orgHeading4 /^\s*\*\{4}\s\+.*$/ keepend contains=@Spell,orgTag,orgT
 syntax match orgHeading5 /^\s*\*\{5}\s\+.*$/ keepend contains=@Spell,orgTag,orgTodo
 syntax match orgHeading6 /^\s*\*\{6}\s\+.*$/ keepend contains=@Spell,orgTag,orgTodo
 syntax match orgTag /:\w\{-}:/ contained contains=orgTag
-" TODO make these words configurable
-syntax keyword orgTodo contained TODO NEXT DONE
+exec 'syntax keyword orgTodo contained ' . join(g:org_state_keywords, ' ')
+
 
 highlight def link orgHeading1 htmlH1
 highlight def link orgHeading2 htmlH2
@@ -95,7 +95,9 @@ highlight def link orgHyperlink Underlined
 
 " Tables
 syntax match orgTable /^|.*$/ contains=@Spell,orgBold,orgItalic,orgUnderline,orgVerbatim,orgCode
-highlight def link orgTable ColorColumn
+if get(g:, 'org_hightlight_table_background', 1)
+    highlight def link orgTable ColorColumn
+endif
 
 
 let b:current_syntax = 'org'
