@@ -19,6 +19,8 @@ endfunction
 setlocal foldexpr=OrgFold()
 setlocal foldmethod=expr
 
+" TODO set default 'foldlevel'?
+
 " Make folds more readable
 setlocal foldtext=getline(v:foldstart)
 setlocal fillchars-=fold:-

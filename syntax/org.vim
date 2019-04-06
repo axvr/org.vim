@@ -35,8 +35,8 @@ syntax match  orgOption /^\s*#+\w\+.*$/ keepend
 syntax region orgTitle matchgroup=orgOption start="^\s*#+TITLE:\s*" end="$" keepend oneline
 
 highlight def link orgBlockDelimiter SpecialComment
-highlight def link orgOption Type
-highlight def link orgTitle Function
+highlight def link orgOption SpecialComment
+highlight def link orgTitle Title
 
 
 " Code and vervatim text
@@ -65,30 +65,17 @@ syntax match orgHeading2 /^\s*\*\{2}\s\+.*$/ keepend contains=@Spell,orgTag,orgT
 syntax match orgHeading3 /^\s*\*\{3}\s\+.*$/ keepend contains=@Spell,orgTag,orgTodo
 syntax match orgHeading4 /^\s*\*\{4}\s\+.*$/ keepend contains=@Spell,orgTag,orgTodo
 syntax match orgHeading5 /^\s*\*\{5}\s\+.*$/ keepend contains=@Spell,orgTag,orgTodo
-syntax match orgHeading6 /^\s*\*\{6}\s\+.*$/ keepend contains=@Spell,orgTag,orgTodo
-syntax match orgHeadingE /^\s*\*\{7,}\s\+.*$/ keepend contains=@Spell,orgTag,orgTodo
+syntax match orgHeading6 /^\s*\*\{6,}\s\+.*$/ keepend contains=@Spell,orgTag,orgTodo
 
 syntax match orgTag /:\w\{-}:/ contained contains=orgTag
 exec 'syntax keyword orgTodo contained ' . join(g:org_state_keywords, ' ')
 
-if hlexists('htmlH1')
-    highlight def link orgHeading1 htmlH1
-    highlight def link orgHeading2 htmlH2
-    highlight def link orgHeading3 htmlH3
-    highlight def link orgHeading4 htmlH4
-    highlight def link orgHeading5 htmlH5
-    highlight def link orgHeading6 htmlH6
-    highlight def link orgHeadingE htmlH6
-else
-    hi def link orgHeading1 Constant
-    hi def link orgHeading2 String
-    hi def link orgHeading3 PreProc
-    hi def link orgHeading4 PreProc
-    hi def link orgHeading5 PreProc
-    hi def link orgHeading6 PreProc
-    hi def link orgHeadingE PreProc
-endif
-
+hi def link orgHeading1 Title
+hi def link orgHeading2 orgHeading1
+hi def link orgHeading3 orgHeading2
+hi def link orgHeading4 orgHeading3
+hi def link orgHeading5 orgHeading4
+hi def link orgHeading6 orgHeading5
 highlight def link orgTodo Todo
 highlight def link orgTag Type
 
