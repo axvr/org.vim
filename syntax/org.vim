@@ -18,10 +18,10 @@ endif
 syntax spell toplevel
 
 " Bold, underine, italic, etc.
-syntax region orgItalic        matchgroup=orgItalicDelimiter        start="\/\S\@=\/\@!" end="\S\@<=\/\@<!\/" keepend contains=@Spell oneline
-syntax region orgBold          matchgroup=orgBoldDelimiter          start="\*\S\@=\*\@!" end="\S\@<=\*\@<!\*" keepend contains=@Spell oneline
-syntax region orgUnderline     matchgroup=orgUnderlineDelimiter     start="_\S\@=_\@!"   end="\S\@<=_\@<!_"   keepend contains=@Spell oneline
-syntax region orgStrikethrough matchgroup=orgStrikethroughDelimiter start="+\S\@=+\@!"   end="\S\@<=+\@<!+"   keepend contains=@Spell oneline
+syntax region orgItalic        matchgroup=orgItalicDelimiter        start="\/\S\@=\/\@!" end="\S\@<=\/\@<!\/" keepend contains=@Spell
+syntax region orgBold          matchgroup=orgBoldDelimiter          start="\*\S\@=\*\@!" end="\S\@<=\*\@<!\*" keepend contains=@Spell
+syntax region orgUnderline     matchgroup=orgUnderlineDelimiter     start="_\S\@=_\@!"   end="\S\@<=_\@<!_"   keepend contains=@Spell
+syntax region orgStrikethrough matchgroup=orgStrikethroughDelimiter start="+\S\@=+\@!"   end="\S\@<=+\@<!+"   keepend contains=@Spell
 
 if org#option('org_use_italics', 0)
     highlight def orgItalic term=italic cterm=italic gui=italic
