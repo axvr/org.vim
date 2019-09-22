@@ -74,7 +74,7 @@ syntax match orgHeading5 /^\s*\*\{5}\s\+.*$/ keepend contains=@Spell,orgTag,orgT
 syntax match orgHeading6 /^\s*\*\{6,}\s\+.*$/ keepend contains=@Spell,orgTag,orgTodo
 
 syntax match orgTag /:\w\{-}:/ contained contains=orgTag
-exec 'syntax keyword orgTodo contained ' . join(g:org_state_keywords, ' ')
+exec 'syntax keyword orgTodo contained ' . join(org#option('org_state_keywords', ['TODO', 'NEXT', 'DONE']), ' ')
 
 hi def link orgHeading1 Title
 hi def link orgHeading2 orgHeading1

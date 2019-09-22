@@ -36,7 +36,7 @@ WIP.
 ==============================================================================
  4. CONFIGURATION                                           *org-configuration*
 
-                                                       *'g:org_state_keywords'*
+                               *'b:org_state_keywords'*  *'g:org_state_keywords'*
 Value: list of strings~
 Default: ['TODO', 'NEXT', 'DONE']~
 
@@ -46,6 +46,9 @@ strings you would like to use.
     let g:org_state_keywords = ['TODO', 'WAIT', 'DOING', 'DONE', 'CANCELED']
 <
 Note: state keywords are case sensitive.
+
+State keywords can be set on specific buffers by using |'b:org_state_keywords'|
+rather than |'g:org_state_keywords'|.
 
 ------------------------------------------------------------------------------
                                  *'b:org_conceal_links'*  *'g:org_conceal_links'*
