@@ -1,8 +1,14 @@
-" =============================================================
-" Description:  Basic Org-mode syntax highlighting
-" Author:       Alex Vear (axvr) <av@axvr.io>
-" Licence:      ISC (2019)
-" =============================================================
+" Vim syntax file for GNU Emacs' Org mode
+"
+" Maintainer:   Alex Vear <av@axvr.io>
+" License:      Vim (see `:help license`)
+" Location:     syntax/org.vim
+" Website:      https://github.com/axvr/org.vim
+" Last Change:  2019-09-22
+"
+" Reference Specification: Org mode manual
+"   GNU Info: `$ info Org`
+"   Web: <https://orgmode.org/manual/index.html>
 
 if exists("b:current_syntax")
     finish

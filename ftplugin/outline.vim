@@ -1,8 +1,14 @@
-" =============================================================
-" Description:  Folding for GNU Emacs' Outline mode
-" Author:       Alex Vear (axvr) <av@axvr.io>
-" Licence:      ISC (2019)
-" =============================================================
+" Vim filetype plugin for GNU Emacs' Outline mode
+"
+" Maintainer:   Alex Vear <av@axvr.io>
+" License:      Vim (see `:help license`)
+" Location:     ftplugin/outline.vim
+" Website:      https://github.com/axvr/org.vim
+" Last Change:  2019-09-22
+"
+" Reference Specification: GNU Emacs Manual, section 'Outline Mode'
+"   GNU Info: `$ info Emacs Outline Mode`
+"   Web: <https://www.gnu.org/software/emacs/manual/html_node/emacs/Outline-Mode.html>
 
 function! OutlineFold()
     let l:depth = match(getline(v:lnum), '\(^\*\+\)\@<=\( .*$\)\@=')

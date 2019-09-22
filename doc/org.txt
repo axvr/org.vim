@@ -1,24 +1,26 @@
-*org.txt*            A minimal Org-mode package providing only the necessities.
+*org.txt*            A minimal Org mode package providing only the necessities.
 
 
                       Org.vim Manual by Alex Vear~
 
 
-Welcome to the org.vim user manual.                     *org*  *org.vim*  *vim-org*
+Welcome to the org.vim user manual.            *org*  *org.vim*  *vim-org*  *outline*
 
     1. Introduction ............................... |org-intro|
     2. Installation ............................... |org-install|
     3. Basic syntax ............................... |org-syntax|
     4. Configuration .............................. |org-configuration|
+    5. Legal ...................................... |org-legal|
+    6. References ................................. |org-references|
 
 ==============================================================================
  1. INTRODUCTION                                                    *org-intro*
 
-Org.vim is a minimal Org-mode package for Vim. It provides only the absolute
+Org.vim is a minimal Org mode package for Vim. It provides only the absolute
 necessities (e.g. syntax highlighting and folding) at a high standard.
 
 The main goal of this package is to replicate Vim's default Markdown editing
-experience for Org-mode files.
+experience for Org mode files.
 
 ==============================================================================
  2. INSTALLATION                                                  *org-install*
@@ -71,5 +73,29 @@ To disable this feature place the following line in your vimrc:
 >
     let g:org_highlight_table_background = 0
 <
+==============================================================================
+ 5. LEGAL                                                           *org-legal*
+
+Org.vim is based on the work of many other people (far too many to list here),
+without them org.vim would not have been possible. The most notable works are:
+
+  * GNU Emacs' Outline mode [1].
+  * Carsten Dominik's Org mode [2].
+
+Org.vim is distributed under the same terms as Vim itself.
+
+Copyright (c) 2018-2019, Alex Vear.
+
+A copy of the full licence text should have been provided with this extension
+in the `LICENCE` file. The license can also be viewed on the web [3] or by
+viewing the |license| section of the |uganda.txt| help doc from within Vim.
+
+==============================================================================
+ 6. REFERENCES                                                 *org-references*
+
+[1]: <https://www.gnu.org/software/emacs/manual/html_node/emacs/Outline-Mode.html>
+[2]: <https://orgmode.org/>
+[3]: <http://vimdoc.sourceforge.net/htmldoc/uganda.html#license>
+
 ------------------------------------------------------------------------------
 vim:et:ts=8:sts=4:sw=4:tw=78:ft=help:norl:

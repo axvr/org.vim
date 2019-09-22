@@ -1,8 +1,14 @@
-" =============================================================
-" Description:  Syntax file for GNU Emacs' Outline mode
-" Author:       Alex Vear (axvr) <av@axvr.io>
-" Licence:      ISC (2019)
-" =============================================================
+" Vim syntax file for GNU Emacs' Outline mode
+"
+" Maintainer:   Alex Vear <av@axvr.io>
+" License:      Vim (see `:help license`)
+" Location:     syntax/outline.vim
+" Website:      https://github.com/axvr/org.vim
+" Last Change:  2019-09-22
+"
+" Reference Specification: GNU Emacs Manual, section 'Outline Mode'
+"   GNU Info: `$ info Emacs Outline Mode`
+"   Web: <https://www.gnu.org/software/emacs/manual/html_node/emacs/Outline-Mode.html>
 
 if exists("b:current_syntax")
     finish
