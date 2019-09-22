@@ -28,10 +28,3 @@ if org#option('org_conceal_links', 1)
     setlocal conceallevel=2
     setlocal concealcursor=nc
 endif
-
-" Make Vim fold's look more like Org mode folds.
-if org#option('org_clean_folds', 0)
-    setlocal foldtext=getline(v:foldstart)
-    setlocal fillchars-=fold:-
-    setlocal fillchars+=fold:\ 
-endif

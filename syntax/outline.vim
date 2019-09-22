@@ -32,4 +32,4 @@ hi def link outlineHeading4 outlineHeading3
 hi def link outlineHeading5 outlineHeading4
 hi def link outlineHeading6 outlineHeading5
 
-let b:current_syntax = 'org'
+let b:current_syntax = 'outline'

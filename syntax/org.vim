@@ -103,9 +103,6 @@ highlight def link orgHyperlink Underlined
 
 " Tables
 syntax match orgTable /^|.*$/ contains=@Spell,orgBold,orgItalic,orgUnderline,orgVerbatim,orgCode
-if org#option('org_hightlight_table_background', 1)
-    highlight def link orgTable ColorColumn
-endif
 
 
 let b:current_syntax = 'org'
