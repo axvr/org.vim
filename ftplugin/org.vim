@@ -10,8 +10,6 @@
 "   GNU Info: `$ info Org`
 "   Web: <https://orgmode.org/manual/index.html>
 
-setlocal conceallevel=2
-setlocal concealcursor=nc
 setlocal commentstring=#%s
 
 function! OrgFold()
@@ -25,11 +23,15 @@ endfunction
 setlocal foldexpr=OrgFold()
 setlocal foldmethod=expr
 
-" TODO set default 'foldlevel'?
+" Conceal Org mode link syntax
+if org#option('org_conceal_links', 1)
+    setlocal conceallevel=2
+    setlocal concealcursor=nc
+endif
 
-" Make folds more readable
-setlocal foldtext=getline(v:foldstart)
-setlocal fillchars-=fold:-
-setlocal fillchars+=fold:\ 
-
-" TODO add working links?
+" Make Vim fold's look more like Org mode folds.
+if org#option('org_clean_folds', 0)
+    setlocal foldtext=getline(v:foldstart)
+    setlocal fillchars-=fold:-
+    setlocal fillchars+=fold:\ 
+endif

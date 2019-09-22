@@ -23,7 +23,7 @@ syntax region orgBold   matchgroup=orgBoldDelimiter   start="\S\@<=\*\|\*\S\@=" 
 syntax region orgUnderline matchgroup=orgUnderlineDelimiter start="\S\@<=_\|_\S\@=" end="\S\@<=_\|_\S\@=" keepend contains=@Spell oneline
 syntax region orgStrikethrough start="\S\@<=+\|+\S\@=" end="\S\@<=+\|+\S\@=" keepend contains=@Spell oneline
 
-if get(g:, 'org_use_italics', 0)
+if org#option('org_use_italics', 0)
     highlight def orgItalic term=italic cterm=italic gui=italic
 else
     highlight def orgItalic term=none cterm=none gui=none
@@ -103,7 +103,7 @@ highlight def link orgHyperlink Underlined
 
 " Tables
 syntax match orgTable /^|.*$/ contains=@Spell,orgBold,orgItalic,orgUnderline,orgVerbatim,orgCode
-if get(g:, 'org_hightlight_table_background', 1)
+if org#option('org_hightlight_table_background', 1)
     highlight def link orgTable ColorColumn
 endif
 

@@ -16,7 +16,7 @@ Welcome to the org.vim user manual.            *org*  *org.vim*  *vim-org*  *out
 ==============================================================================
  1. INTRODUCTION                                                    *org-intro*
 
-Org.vim is a minimal Org mode package for Vim. It provides only the absolute
+Org.vim is a minimal Org mode package for Vim.  It provides only the absolute
 necessities (e.g. syntax highlighting and folding) at a high standard.
 
 The main goal of this package is to replicate Vim's default Markdown editing
@@ -47,7 +47,54 @@ strings you would like to use.
 Note: state keywords are case sensitive.
 
 ------------------------------------------------------------------------------
-                                                          *'g:org_use_italics'*
+                                 *'b:org_conceal_links'*  *'g:org_conceal_links'*
+Value: numeric~
+Default: 1~
+
+This option changes how Org mode links are rendered.  If this option is
+enabled, most of the link syntax will be collapsed to look as it would within
+Emacs or a web browser; only showing the (underlined) link text.
+>
+    [https://www.vim.org][Vim website] --> Vim website
+<
+When in insert mode with the cursor on that line, Vim will show the full link
+syntax.  This feature is enabled by default, however the way Vim treats
+concealed text can be annoying, so it can be disabled.
+
+To disable for all Org mode files, place the following line in your vimrc:
+>
+    let g:org_conceal_links = 0
+<
+To disable for a specific file use this instead:
+>
+    let b:org_conceal_links = 0
+<
+If you would like to modify how links are concealed, you can disable this
+option, and manually set the |conceallevel| and |concealcursor| options from
+an |autocmd| like so.
+>
+    autocmd FileType org setlocal conceallevel=2 concealcursor=nc
+<
+------------------------------------------------------------------------------
+                                     *'b:org_clean_folds'*  *'g:org_clean_folds'*
+Value: numeric~
+Default: 0~
+
+By default folds in Vim look extremely ugly in comparison to folds in Emacs'
+Org and Outline mode. When this option is enabled, it will make folds (in Org
+or Outline mode buffers) look similar to those in Emacs.
+
+To enable these nicer looking folds for all Org and Outline mode files. place
+the following line in your vimrc:
+>
+    let g:org_clean_folds = 1
+<
+To enable them only for a specific files, you can use this instead:
+>
+    let b:org_clean_folds = 1
+<
+------------------------------------------------------------------------------
+                                     *'b:org_use_italics'*  *'g:org_use_italics'*
 Value: numeric~
 Default: 0~
 
@@ -57,27 +104,37 @@ the italic variant of your font.
 Note: this option is disabled by default because some terminals and monospaced
 fonts don't support the use of italics.
 
-To enable this feature place the following line in your vimrc:
+To enable this feature in all Org mode files place the following line in your
+vimrc:
 >
     let g:org_use_italics = 1
 <
+To enable italics only in a single buffer, use this instead:
+>
+    let b:org_use_italics = 1
+<
 ------------------------------------------------------------------------------
-                                           *'g:org_highlight_table_background'*
+       *'b:org_highlight_table_background'*  *'g:org_highlight_table_background'*
 Value: numeric~
 Default: 1~
 
 This option allows you to disable the highlighting of table backgrounds, as
-the default may not look great with your chosen `colorscheme`.
+the default may not look great with your chosen |colorscheme|.
 
 To disable this feature place the following line in your vimrc:
 >
     let g:org_highlight_table_background = 0
 <
+To disable for a single buffer use this instead:
+>
+    let b:org_highlight_table_background = 0
+<
 ==============================================================================
  5. LEGAL                                                           *org-legal*
 
 Org.vim is based on the work of many other people (far too many to list here),
-without them org.vim would not have been possible. The most notable works are:
+without them org.vim would not have been possible.  The most notable of thse
+works are:
 
   * GNU Emacs' Outline mode [1].
   * Carsten Dominik's Org mode [2].
@@ -87,7 +144,7 @@ Org.vim is distributed under the same terms as Vim itself.
 Copyright (c) 2018-2019, Alex Vear.
 
 A copy of the full licence text should have been provided with this extension
-in the `LICENCE` file. The license can also be viewed on the web [3] or by
+in the `LICENCE` file.  The license can also be viewed on the web [3] or by
 viewing the |license| section of the |uganda.txt| help doc from within Vim.
 
 ==============================================================================
