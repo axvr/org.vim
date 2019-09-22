@@ -16,11 +16,12 @@ Welcome to the org.vim user manual.            *org*  *org.vim*  *vim-org*  *out
 ==============================================================================
  1. INTRODUCTION                                                    *org-intro*
 
-Org.vim is a minimal Org mode package for Vim.  It provides only the absolute
-necessities (e.g. syntax highlighting and folding) at a high standard.
+Org.vim is a very minimal Org mode [2] and Outline mode [1] plugin for Vim
+providing only syntax highlighting and folding.
 
-The main goal of this package is to replicate Vim's default Markdown editing
-experience for Org mode files.
+This plugin aims to replicate Vim's existing Markdown editing experience on
+Org mode (and Outline mode) files, rather than trying to be a full featured
+Org mode plugin -- that is what Emacs is for.
 
 ==============================================================================
  2. INSTALLATION                                                  *org-install*
