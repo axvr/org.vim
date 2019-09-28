@@ -8,9 +8,13 @@ editing experience on Org mode (and Outline mode) files, rather than trying to
 be a full featured Org mode plugin -- that is what Emacs is for.
 
 Originally created so I would be able to quickly edit and easily read Org mode
-files in Vim without all _the bells and whistles_ the Emacs version provides.
-It also allowed me use [Orgzly](https://github.com/orgzly/orgzly-android/)
+files in Vim without any of _the bells and whistles_ of the original Emacs
+implementation.  It also allowed me use [Orgzly](https://github.com/orgzly/orgzly-android/)
 (highly recommended) without worrying about Emacs lock-in.
+
+**Notice**: this project is considered complete by the author. You can still
+report bugs and request additional features, however it is unlikely that new
+features will be added.
 
 ## Licence
 
