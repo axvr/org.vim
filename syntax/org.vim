@@ -4,13 +4,13 @@
 " License:      Vim (see `:help license`)
 " Location:     syntax/org.vim
 " Website:      https://github.com/axvr/org.vim
-" Last Change:  2019-09-22
+" Last Change:  2019-09-28
 "
 " Reference Specification: Org mode manual
 "   GNU Info: `$ info Org`
 "   Web: <https://orgmode.org/manual/index.html>
 
-if exists("b:current_syntax")
+if exists('b:current_syntax') && b:current_syntax !=# 'outline'
     finish
 endif
 
@@ -76,12 +76,12 @@ syntax match orgHeading6 /^\s*\*\{6,}\s\+.*$/ keepend contains=@Spell,orgTag,org
 syntax match orgTag /:\w\{-}:/ contained contains=orgTag
 exec 'syntax keyword orgTodo contained ' . join(org#option('org_state_keywords', ['TODO', 'NEXT', 'DONE']), ' ')
 
-hi def link orgHeading1 Title
-hi def link orgHeading2 orgHeading1
-hi def link orgHeading3 orgHeading2
-hi def link orgHeading4 orgHeading3
-hi def link orgHeading5 orgHeading4
-hi def link orgHeading6 orgHeading5
+highlight def link orgHeading1 Title
+highlight def link orgHeading2 orgHeading1
+highlight def link orgHeading3 orgHeading2
+highlight def link orgHeading4 orgHeading3
+highlight def link orgHeading5 orgHeading4
+highlight def link orgHeading6 orgHeading5
 highlight def link orgTodo Todo
 highlight def link orgTag Type
 
@@ -99,10 +99,6 @@ syntax match orgHyperLeft /\[\{2}/ contained conceal
 syntax match orgHyperRight /\]\{2}/ contained conceal
 syntax match orgHyperURL /[^][]\{-1,}\]\[/ contained conceal
 highlight def link orgHyperlink Underlined
-
-
-" Tables
-syntax match orgTable /^|.*$/ contains=@Spell,orgBold,orgItalic,orgUnderline,orgVerbatim,orgCode
 
 
 let b:current_syntax = 'org'

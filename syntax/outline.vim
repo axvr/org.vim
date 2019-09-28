@@ -4,13 +4,13 @@
 " License:      Vim (see `:help license`)
 " Location:     syntax/outline.vim
 " Website:      https://github.com/axvr/org.vim
-" Last Change:  2019-09-22
+" Last Change:  2019-09-28
 "
 " Reference Specification: GNU Emacs Manual, section 'Outline Mode'
 "   GNU Info: `$ info Emacs Outline Mode`
 "   Web: <https://www.gnu.org/software/emacs/manual/html_node/emacs/Outline-Mode.html>
 
-if exists("b:current_syntax")
+if exists('b:current_syntax')
     finish
 endif
 
