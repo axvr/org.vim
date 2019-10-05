@@ -152,22 +152,21 @@ an |autocmd| like so.
 ------------------------------------------------------------------------------
                                      *'b:org_use_italics'*  *'g:org_use_italics'*
 Value: numeric~
-Default: 0~
+Default: 1~
 
 Display italic org-mode markup (e.g. `/this is italic org-mode markup/`) using
 the italic variant of your font.
 
-Note: this option is disabled by default because some terminals and monospaced
-fonts don't support the use of italics.
+As some terminals, terminal multiplexers and monospaced fonts don't support
+the use of italics, org.vim provides a mechanism to disable italic text.
 
-To enable this feature in all Org mode files place the following line in your
-vimrc:
+To disable for all Org mode files place the following line in your vimrc:
 >
-    let g:org_use_italics = 1
+    let g:org_use_italics = 0
 <
-To enable italics only in a single buffer, use this instead:
+To disable italics only in a single buffer, use this instead:
 >
-    let b:org_use_italics = 1
+    let b:org_use_italics = 0
 <
 ==============================================================================
  5. LEGAL                                                           *org-legal*

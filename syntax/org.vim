@@ -23,7 +23,7 @@ syntax region orgBold          matchgroup=orgBoldDelimiter          start="\*\S\
 syntax region orgUnderline     matchgroup=orgUnderlineDelimiter     start="_\S\@=_\@!"   end="\S\@<=_\@<!_"   keepend contains=@Spell
 syntax region orgStrikethrough matchgroup=orgStrikethroughDelimiter start="+\S\@=+\@!"   end="\S\@<=+\@<!+"   keepend contains=@Spell
 
-if org#option('org_use_italics', 0)
+if org#option('org_use_italics', 1)
     highlight def orgItalic term=italic cterm=italic gui=italic
 else
     highlight def orgItalic term=none cterm=none gui=none
