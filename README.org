@@ -1,0 +1,28 @@
+#+TITLE: Org mode and Outline mode syntax highlighting for Vim
+
+Org.vim is a very minimal [[https://orgmode.org][Org mode]] and [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Outline-Mode.html][Outline mode]] plugin for
+[[https://www.vim.org][Vim]] providing only syntax highlighting and folding.
+
+This plugin aims to replicate Vim's [[https://github.com/tpope/vim-markdown/][existing Markdown]]
+editing experience on Org mode (and Outline mode) files, rather than trying to
+be a full featured Org mode plugin—that is what Emacs is for.
+
+Originally created so I would be able to quickly edit and easily read Org mode
+files in Vim without any of /the bells and whistles/ of the original Emacs
+implementation.  It also allowed me use [[https://github.com/orgzly/orgzly-android/][Orgzly]]
+(highly recommended) without worrying about Emacs lock-in.
+
+*Notice*: this project is considered complete by the author. You can still
+report bugs and request additional features, however it is unlikely that new
+features will be added.
+
+** Licence
+
+Copyright (c) 2018-2019, Alex Vear.
+
+Org.vim is distributed under the same terms as Vim itself.
+
+A copy of the full licence text should have been provided with this extension
+in the =LICENCE= file. The license can also be viewed on the
+[[http://vimdoc.sourceforge.net/htmldoc/uganda.html#license][web]] or by invoking
+~:help license~ from within Vim.
