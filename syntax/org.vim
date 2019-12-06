@@ -46,12 +46,12 @@ highlight def link orgTitle Title
 
 
 " Code and vervatim text
-syntax region orgCode     matchgroup=orgCodeDelimiter     start="=\S\@==\@!" end="\S\@<==\@<!=" keepend
-syntax region orgVerbatim matchgroup=orgVerbatimDelimiter start="\~\S\@=\~\@!" end="\S\@<=\~\@<!\~" keepend
+syntax region orgVerbatim matchgroup=orgVerbatimDelimiter start="=\S\@==\@!" end="\S\@<==\@<!=" keepend
 syntax match  orgVerbatim /^\s*: .*$/ keepend
 syntax region orgVerbatim matchgroup=orgBlockDelimiter start="^\s*#+BEGIN_.*"      end="^\s*#+END_.*"      keepend
 syntax region orgCode     matchgroup=orgBlockDelimiter start="^\s*#+BEGIN_SRC"     end="^\s*#+END_SRC"     keepend
 syntax region orgCode     matchgroup=orgBlockDelimiter start="^\s*#+BEGIN_EXAMPLE" end="^\s*#+END_EXAMPLE" keepend
+syntax region orgCode     matchgroup=orgCodeDelimiter  start="\~\S\@=\~\@!"        end="\S\@<=\~\@<!\~"    keepend
 
 highlight def link orgVerbatim Identifier
 highlight def link orgVerbatimDelimiter orgVerbatim

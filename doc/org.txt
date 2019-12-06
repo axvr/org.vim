@@ -64,7 +64,7 @@ The following is a short overview of essential Org mode syntax.
 
     Paragraphs are separated by empty lines.
 
-    =monospaced= and ~verbatim~ text are delimited by equals signs and tilde
+    ~monospaced~ and =verbatim= text are delimited by equals signs and tilde
     respectively.
 
     : Entire lines can be marked as verbatim by prepending with a colon.
@@ -154,7 +154,7 @@ an |autocmd| like so.
 Value: numeric~
 Default: 1~
 
-Display italic org-mode markup (e.g. `/this is italic org-mode markup/`) using
+Display italic Org mode markup (e.g. `/this is italic Org mode markup/`) using
 the italic variant of your font.
 
 As some terminals, terminal multiplexers and monospaced fonts don't support
