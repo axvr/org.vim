@@ -4,19 +4,17 @@
 " License:      Vim (see `:help license`)
 " Location:     ftplugin/outline.vim
 " Website:      https://github.com/axvr/org.vim
-" Last Change:  2019-09-22
+" Last Change:  2020-01-04
 "
 " Reference Specification: GNU Emacs Manual, section 'Outline Mode'
 "   GNU Info: `$ info Emacs Outline Mode`
 "   Web: <https://www.gnu.org/software/emacs/manual/html_node/emacs/Outline-Mode.html>
 
-function! OutlineFold()
-    let l:depth = match(getline(v:lnum), '\(^\*\+\)\@<=\( .*$\)\@=')
-    if l:depth > 0 && synIDattr(synID(v:lnum, 1, 1), 'name') =~# 'outlineHeading'
-        return ">" . l:depth
-    endif
-    return "="
-endfunction
-
-setlocal foldexpr=OutlineFold()
+setlocal foldexpr=org#fold_expr()
 setlocal foldmethod=expr
+
+if org#option('org_clean_folds', 0)
+    setlocal foldtext=org#fold_text()
+    setlocal fillchars-=fold:-
+    setlocal fillchars-=fold:\
+endif

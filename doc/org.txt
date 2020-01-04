@@ -106,6 +106,23 @@ following command.
 ==============================================================================
  4. CONFIGURATION                                           *org-configuration*
 
+                                                                  *org-folding*
+
+To control how Org.vim handles folding, just use the standard Vim |folding|
+options and commands.
+
+For example if you want to enable or disable folding, use 'foldenable'.
+>
+    autocmd FileType org,outline setlocal nofoldenable
+<
+Or if you want folding enabled and all folds opened by default, use
+'foldlevelstart'.
+>
+    autocmd FileType org,outline setlocal foldenable foldlevelstart=99
+<
+For more information on folding in Vim, refer to |fold.txt|.
+
+------------------------------------------------------------------------------
                                *'b:org_state_keywords'*  *'g:org_state_keywords'*
 Value: list of strings~
 Default: ['TODO', 'NEXT', 'DONE']~
@@ -150,6 +167,26 @@ an |autocmd| like so.
     autocmd FileType org setlocal conceallevel=2 concealcursor=nc
 <
 ------------------------------------------------------------------------------
+                                     *'b:org_clean_folds'*  *'g:org_clean_folds'*
+Value: numeric~
+Default: 0~
+
+Vim's default styling for folds is quite ugly.  Enabling this option will
+remove much of the visual noise and suffix the folded heading text with an
+ellipsis (`...`) making folds look the same as they do in Emacs' Org mode (and
+Outline mode).
+>
+    * Heading 1...
+<
+This option can be enabled for all buffers like so:
+>
+    let g:org_clean_folds = 1
+<
+Alternatively it can be enabled for specific buffers:
+>
+    let b:org_clean_folds = 1
+<
+------------------------------------------------------------------------------
                                      *'b:org_use_italics'*  *'g:org_use_italics'*
 Value: numeric~
 Default: 1~
@@ -180,7 +217,7 @@ works are:
 
 Org.vim is distributed under the same terms as Vim itself.
 
-Copyright (c) 2018-2019, Alex Vear.
+Copyright (c) 2018-2020, Alex Vear.
 
 A copy of the full licence text should have been provided with this extension
 in the `LICENCE` file.  The license can also be viewed on the web [3] or by
