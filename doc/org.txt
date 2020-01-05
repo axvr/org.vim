@@ -10,8 +10,9 @@ Welcome to the org.vim user manual.            *org*  *org.vim*  *vim-org*  *out
     2. Installation ............................... |org-install|
     3. Basic syntax ............................... |org-syntax|
     4. Configuration .............................. |org-configuration|
-    5. Legal ...................................... |org-legal|
-    6. References ................................. |org-references|
+    5. Change log ................................. |org-changelog|
+    6. Legal ...................................... |org-legal|
+    7. References ................................. |org-references|
 
 ==============================================================================
  1. INTRODUCTION                                                    *org-intro*
@@ -52,7 +53,7 @@ levels denoted by asterisks.
     Org.vim supports as many heading levels as you want, and each of these
     headings can use Vim's folding keys and fold navigation.
 <
-Org mode is a huge superset of Outline mode. It uses the same heading syntax
+Org mode is a huge superset of Outline mode.  It uses the same heading syntax
 mentioned above, but supports many, many more features.  Org.vim supports the
 core subset of Org mode syntax, which should be suitable for most use cases.
 
@@ -98,7 +99,7 @@ also be manually enabled with the following command.
     :set filetype=org
 <
 Outline mode doesn't have a file extension like Org mode so you will have to
-enable it manually. This is simply done by opening the file and runing the
+enable it manually.  This is simply done by opening the file and runing the
 following command.
 >
     :set filetype=outline
@@ -146,7 +147,7 @@ This option changes how Org mode links are rendered.  If this option is
 enabled, most of the link syntax will be collapsed to look as it would within
 Emacs or a web browser; only showing the (underlined) link text.
 >
-    [https://www.vim.org][Vim website] --> Vim website
+    [[https://www.vim.org][Vim website]] --> Vim website
 <
 When in insert mode with the cursor on that line, Vim will show the full link
 syntax.  This feature is enabled by default, however the way Vim treats
@@ -206,7 +207,23 @@ To disable italics only in a single buffer, use this instead:
     let b:org_use_italics = 0
 <
 ==============================================================================
- 5. LEGAL                                                           *org-legal*
+ 5. CHANGE LOG                                                  *org-changelog*
+
+v1.1 [2020-01-05]~
+
+  * Added documentation on folding configuration (|org-folding|).
+  * Added |'g:org_clean_folds'| option.
+  * Improved accuracy of in-line delimiter matching.
+  * Various minor documentation fixes.
+  * Rewrote README in Org mode.
+  * Enabled rendering of italics by default.
+
+v1.0 [2019-09-28]~
+
+  * Initial stable release.
+
+==============================================================================
+ 6. LEGAL                                                           *org-legal*
 
 Org.vim is based on the work of many other people (far too many to list here),
 without them org.vim would not have been possible.  The most notable of thse
@@ -217,14 +234,14 @@ works are:
 
 Org.vim is distributed under the same terms as Vim itself.
 
-Copyright (c) 2018-2020, Alex Vear.
+Copyright (c) 2018–2020, Alex Vear.
 
 A copy of the full licence text should have been provided with this extension
 in the `LICENCE` file.  The license can also be viewed on the web [3] or by
 viewing the |license| section of the |uganda.txt| help doc from within Vim.
 
 ==============================================================================
- 6. REFERENCES                                                 *org-references*
+ 7. REFERENCES                                                 *org-references*
 
 [1]: <https://www.gnu.org/software/emacs/manual/html_node/emacs/Outline-Mode.html>
 [2]: <https://orgmode.org/>

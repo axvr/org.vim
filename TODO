@@ -2,7 +2,6 @@ MAYBE:
   - Better link syntax highlighting (more similar to links in vim-markdown)
   - Syntax highlight bullets and checkboxes
   - Different syntax group for heading delimiters
-  - Change log in Vim doc
 
 UNLIKELY:
   - Add working links

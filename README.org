@@ -18,7 +18,7 @@ features will be added.
 
 ** Licence
 
-Copyright (c) 2018-2019, Alex Vear.
+Copyright (c) 2018–2020, Alex Vear.
 
 Org.vim is distributed under the same terms as Vim itself.
 
