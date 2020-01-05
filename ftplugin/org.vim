@@ -18,7 +18,6 @@ setlocal foldmethod=expr
 if org#option('org_clean_folds', 0)
     setlocal foldtext=org#fold_text()
     setlocal fillchars-=fold:-
-    setlocal fillchars-=fold:\
 endif
 
 " Conceal Org mode link syntax
