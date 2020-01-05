@@ -4,7 +4,7 @@
 " License:      Vim (see `:help license`)
 " Location:     syntax/org.vim
 " Website:      https://github.com/axvr/org.vim
-" Last Change:  2019-09-28
+" Last Change:  2020-01-05
 "
 " Reference Specification: Org mode manual
 "   GNU Info: `$ info Org`
@@ -18,10 +18,10 @@ endif
 syntax spell toplevel
 
 " Bold, underine, italic, etc.
-syntax region orgItalic        matchgroup=orgItalicDelimiter        start="\/\S\@=\/\@!" end="\S\@<=\/\@<!\/" keepend contains=@Spell
-syntax region orgBold          matchgroup=orgBoldDelimiter          start="\*\S\@=\*\@!" end="\S\@<=\*\@<!\*" keepend contains=@Spell
-syntax region orgUnderline     matchgroup=orgUnderlineDelimiter     start="_\S\@=_\@!"   end="\S\@<=_\@<!_"   keepend contains=@Spell
-syntax region orgStrikethrough matchgroup=orgStrikethroughDelimiter start="+\S\@=+\@!"   end="\S\@<=+\@<!+"   keepend contains=@Spell
+syntax region orgItalic        matchgroup=orgItalicDelimiter        start="[^ \t\k]\@<!\/\k\@=\/\@!" end="\k\@<=\/\@<!\/" keepend contains=@Spell
+syntax region orgBold          matchgroup=orgBoldDelimiter          start="[^ \t\k]\@<!\*\k\@=\*\@!" end="\k\@<=\*\@<!\*" keepend contains=@Spell
+syntax region orgUnderline     matchgroup=orgUnderlineDelimiter     start="[^ \t\k]\@<!_\k\@=_\@!"   end="\k\@<=_\@<!_"   keepend contains=@Spell
+syntax region orgStrikethrough matchgroup=orgStrikethroughDelimiter start="[^ \t\k]\@<!+\k\@=+\@!"   end="\k\@<=+\@<!+"   keepend contains=@Spell
 
 if org#option('org_use_italics', 1)
     highlight def orgItalic term=italic cterm=italic gui=italic
@@ -31,7 +31,6 @@ endif
 
 highlight def orgBold term=bold cterm=bold gui=bold
 highlight def orgUnderline term=underline cterm=underline gui=underline
-highlight def link orgItalicDelimiter    orgItalic
 highlight def link orgBoldDelimiter      orgBold
 highlight def link orgUnderlineDelimiter orgUnderline
 
@@ -46,12 +45,12 @@ highlight def link orgTitle Title
 
 
 " Code and vervatim text
-syntax region orgVerbatim matchgroup=orgVerbatimDelimiter start="=\S\@==\@!" end="\S\@<==\@<!=" keepend
+syntax region orgCode     matchgroup=orgCodeDelimiter     start="[^ \t\k]\@<!\~\k\@=\~\@!" end="\k\@<=\~\@<!\~" keepend
+syntax region orgVerbatim matchgroup=orgVerbatimDelimiter start="[^ \t\k]\@<!=\k\@==\@!"   end="\k\@<==\@<!="   keepend
 syntax match  orgVerbatim /^\s*: .*$/ keepend
 syntax region orgVerbatim matchgroup=orgBlockDelimiter start="^\s*#+BEGIN_.*"      end="^\s*#+END_.*"      keepend
 syntax region orgCode     matchgroup=orgBlockDelimiter start="^\s*#+BEGIN_SRC"     end="^\s*#+END_SRC"     keepend
 syntax region orgCode     matchgroup=orgBlockDelimiter start="^\s*#+BEGIN_EXAMPLE" end="^\s*#+END_EXAMPLE" keepend
-syntax region orgCode     matchgroup=orgCodeDelimiter  start="\~\S\@=\~\@!"        end="\S\@<=\~\@<!\~"    keepend
 
 highlight def link orgVerbatim Identifier
 highlight def link orgVerbatimDelimiter orgVerbatim
