@@ -103,8 +103,13 @@ highlight def link orgTimestampInactive Comment
 syntax match orgHyperlink /\[\{2}\([^][]\{-1,}\]\[\)\?[^][]\{-1,}\]\{2}/ containedin=ALL contains=orgHyperLeft,orgHyperRight,orgHyperURL
 syntax match orgHyperLeft /\[\{2}/ contained conceal
 syntax match orgHyperRight /\]\{2}/ contained conceal
-syntax match orgHyperURL /[^][]\{-1,}\]\[/ contained conceal
+syntax match orgHyperURL /[^][]\{-1,}\]\[/ contains=orgHyperCentre contained conceal
+syntax match orgHyperCentre /\]\[/ contained conceal
 highlight def link orgHyperlink Underlined
+highlight def link orgHyperURL String
+highlight def link orgHyperCentre Comment
+highlight def link orgHyperLeft Comment
+highlight def link orgHyperRight Comment
 
 
 let b:current_syntax = 'org'

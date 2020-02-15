@@ -22,9 +22,3 @@ if org#option('org_clean_folds', 0)
     setlocal foldtext=org#fold_text()
     setlocal fillchars-=fold:-
 endif
-
-" Conceal Org mode link syntax
-if org#option('org_conceal_links', 1)
-    setlocal conceallevel=2
-    setlocal concealcursor=nc
-endif

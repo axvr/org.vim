@@ -124,6 +124,23 @@ Or if you want folding enabled and all folds opened by default, use
 For more information on folding in Vim, refer to |fold.txt|.
 
 ------------------------------------------------------------------------------
+                                                            *org-conceal-links*
+
+You can tell Vim to conceal links by using the built-in 'conceallevel' and
+'concealcursor' options.
+
+For example, you can make Vim collapse an Org mode link to look like it would
+within Emacs or a Web browser (i.e. only showing the link title).
+>
+    [[https://www.vim.org][Vim website]] --> Vim website
+<
+This is achieved with this |autocmd|:
+>
+    autocmd FileType org setlocal conceallevel=2 concealcursor=nc
+<
+Note: long concealed text can act weird when "hard-wraping" text in Vim.
+
+------------------------------------------------------------------------------
                                *'b:org_state_keywords'*  *'g:org_state_keywords'*
 Value: list of strings~
 Default: ['TODO', 'NEXT', 'DONE']~
@@ -138,35 +155,6 @@ Note: state keywords are case sensitive.
 State keywords can be set on specific buffers by using |'b:org_state_keywords'|
 rather than |'g:org_state_keywords'|.
 
-------------------------------------------------------------------------------
-                                 *'b:org_conceal_links'*  *'g:org_conceal_links'*
-Value: numeric~
-Default: 1~
-
-This option changes how Org mode links are rendered.  If this option is
-enabled, most of the link syntax will be collapsed to look as it would within
-Emacs or a web browser; only showing the (underlined) link text.
->
-    [[https://www.vim.org][Vim website]] --> Vim website
-<
-When in insert mode with the cursor on that line, Vim will show the full link
-syntax.  This feature is enabled by default, however the way Vim treats
-concealed text can be annoying, so it can be disabled.
-
-To disable for all Org mode files, place the following line in your vimrc:
->
-    let g:org_conceal_links = 0
-<
-To disable for a specific file use this instead:
->
-    let b:org_conceal_links = 0
-<
-If you would like to modify how links are concealed, you can disable this
-option, and manually set the |conceallevel| and |concealcursor| options from
-an |autocmd| like so.
->
-    autocmd FileType org setlocal conceallevel=2 concealcursor=nc
-<
 ------------------------------------------------------------------------------
                                      *'b:org_clean_folds'*  *'g:org_clean_folds'*
 Value: numeric~
