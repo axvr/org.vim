@@ -37,7 +37,7 @@ highlight def link orgUnderlineDelimiter orgUnderline
 
 " Options
 syntax match  orgOption /^\s*#+\w\+.*$/ keepend
-syntax region orgTitle matchgroup=orgOption start="^\s*#+TITLE:\s*" end="$" keepend oneline
+syntax region orgTitle matchgroup=orgOption start="\c^\s*#+TITLE:\s*" end="$" keepend oneline
 
 highlight def link orgBlockDelimiter SpecialComment
 highlight def link orgOption SpecialComment
@@ -48,9 +48,9 @@ highlight def link orgTitle Title
 syntax region orgCode     matchgroup=orgCodeDelimiter     start="[^ \t\k]\@<!\~\k\@=\~\@!" end="\k\@<=\~\@<!\~" keepend
 syntax region orgVerbatim matchgroup=orgVerbatimDelimiter start="[^ \t\k]\@<!=\k\@==\@!"   end="\k\@<==\@<!="   keepend
 syntax match  orgVerbatim /^\s*: .*$/ keepend
-syntax region orgVerbatim matchgroup=orgBlockDelimiter start="^\s*#+BEGIN_.*"      end="^\s*#+END_.*"      keepend
-syntax region orgCode     matchgroup=orgBlockDelimiter start="^\s*#+BEGIN_SRC"     end="^\s*#+END_SRC"     keepend
-syntax region orgCode     matchgroup=orgBlockDelimiter start="^\s*#+BEGIN_EXAMPLE" end="^\s*#+END_EXAMPLE" keepend
+syntax region orgVerbatim matchgroup=orgBlockDelimiter start="\c^\s*#+BEGIN_.*"      end="\c^\s*#+END_.*"      keepend
+syntax region orgCode     matchgroup=orgBlockDelimiter start="\c^\s*#+BEGIN_SRC"     end="\c^\s*#+END_SRC"     keepend
+syntax region orgCode     matchgroup=orgBlockDelimiter start="\c^\s*#+BEGIN_EXAMPLE" end="\c^\s*#+END_EXAMPLE" keepend
 
 highlight def link orgVerbatim Identifier
 highlight def link orgVerbatimDelimiter orgVerbatim
@@ -60,7 +60,7 @@ highlight def link orgCodeDelimiter orgCode
 
 " Comments
 syntax match  orgComment /^\s*#\s\+.*$/ keepend
-syntax region orgComment matchgroup=orgBlockDelimiter start="^\s*#+BEGIN_COMMENT" end="^\s*#+END_COMMENT" keepend
+syntax region orgComment matchgroup=orgBlockDelimiter start="\c^\s*#+BEGIN_COMMENT" end="\c^\s*#+END_COMMENT" keepend
 highlight def link orgComment Comment
 
 
