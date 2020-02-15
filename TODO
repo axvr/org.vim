@@ -1,6 +1,6 @@
 MAYBE:
   - Better link syntax highlighting (more similar to links in vim-markdown)
-  - Syntax highlight bullets and checkboxes
+  - Syntax highlight checkboxes and checkbox cookies
   - Different syntax group for heading delimiters
 
 UNLIKELY:

@@ -11,6 +11,9 @@
 "   Web: <https://orgmode.org/manual/index.html>
 
 setlocal commentstring=#%s
+setlocal comments=fb:*,fb:-,fb:+,b:#,b:\:
+setlocal formatoptions+=ncqlt
+let &l:formatlistpat = '^\s*\(\d\+[.)]\|[+-]\)\s\+'
 
 setlocal foldexpr=org#fold_expr()
 setlocal foldmethod=expr

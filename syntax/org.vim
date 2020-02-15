@@ -85,6 +85,13 @@ highlight def link orgTodo Todo
 highlight def link orgTag Type
 
 
+" Lists
+syntax match orgUnorderedListMarker "^\s*[-+]\s\+" keepend contains=@Spell
+syntax match orgOrderedListMarker "^\s*\d\+[.)]\s\+" keepend contains=@Spell
+highlight def link orgUnorderedListMarker Statement
+highlight def link orgOrderedListMarker orgUnorderedListMarker
+
+
 " Timestamps
 syntax match orgTimestampActive /<\d\{4}-\d\{2}-\d\{2}.\{-}>/ keepend
 syntax match orgTimestampInactive /\[\d\{4}-\d\{2}-\d\{2}.\{-}\]/ keepend
