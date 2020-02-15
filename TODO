@@ -1,10 +1,7 @@
 MAYBE:
   - Syntax highlight checkboxes and checkbox cookies
-  - Different syntax group for heading delimiters
+  - Separate syntax group for heading delimiters
+  - Syntax highlight and indent properties
 
 UNLIKELY:
-  - Add working links
-    - Maybe utilise Vim-Waikiki and override default Vim mappings
-    - Open man pages (use ':h :Man')
-    - Add 'org-store-link' and 'org-insert-link' implementations
   - Implement Emacs's abbreviations (e.g. '\<s<TAB>')

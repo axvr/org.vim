@@ -197,10 +197,20 @@ To disable italics only in a single buffer, use this instead:
 ==============================================================================
  5. CHANGE LOG                                                  *org-changelog*
 
+v1.2 [2020-02-15]~
+
+  * Improved syntax highlighting of links and turned off link concealing.
+    * Added |org_conceal_links| doc section on how turn on link concealing.
+  * Syntax highlight list item bullets and numbers.
+    * Make Vim correctly format lists without messing up indentation.
+  * Allow lower case in option keys and dynamic block markers.
+  * Remove a couple of unnecessary 'fillchars' rules.
+  * Minor README content update.
+
 v1.1 [2020-01-05]~
 
   * Added documentation on folding configuration (|org-folding|).
-  * Added |'g:org_clean_folds'| option.
+  * Added 'g:org_clean_folds' option.
   * Improved accuracy of in-line delimiter matching.
   * Various minor documentation fixes.
   * Rewrote README in Org mode.
