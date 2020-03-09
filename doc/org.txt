@@ -7,12 +7,11 @@
 Welcome to the org.vim user manual.            *org*  *org.vim*  *vim-org*  *outline*
 
     1. Introduction ............................... |org-intro|
-    2. Installation ............................... |org-install|
-    3. Basic syntax ............................... |org-syntax|
-    4. Configuration .............................. |org-configuration|
-    5. Change log ................................. |org-changelog|
-    6. Legal ...................................... |org-legal|
-    7. References ................................. |org-references|
+    2. Usage ...................................... |org-usage|
+    3. Configuration .............................. |org-configuration|
+    4. Change log ................................. |org-changelog|
+    5. Legal ...................................... |org-legal|
+    6. References ................................. |org-references|
 
 ==============================================================================
  1. INTRODUCTION                                                    *org-intro*
@@ -25,87 +24,21 @@ Org mode (and Outline mode) files, rather than trying to be a full featured
 Org mode plugin -- that is what Emacs is for.
 
 ==============================================================================
- 2. INSTALLATION                                                  *org-install*
-
-Installation of Org.vim can be performed by using your favourite Vim
-plugin/package management tool(s).
-
-==============================================================================
- 3. BASIC SYNTAX                                                   *org-syntax*
-
-Outline mode isn't used much anymore, one place it is still used is for GNU
-Emacs release notes.  It contains only a single piece of syntax: heading
-levels denoted by asterisks.
->
-    * This is a heading
-
-    The first heading is equivalent to <h1> tags in HTML files.
-
-    ** This is a sub-heading
-
-    This heading uses 2 asterisks to denote that it is a below the previous
-    heading.
-
-    *** This is a sub-sub-heading
-
-    * This is another top level heading
-
-    Org.vim supports as many heading levels as you want, and each of these
-    headings can use Vim's folding keys and fold navigation.
-<
-Org mode is a huge superset of Outline mode.  It uses the same heading syntax
-mentioned above, but supports many, many more features.  Org.vim supports the
-core subset of Org mode syntax, which should be suitable for most use cases.
-
-The following is a short overview of essential Org mode syntax.
->
-    Org mode supports *bold*, /italic/, _underline_ and +strikethrough+ text
-    which is delimited by asterisks, forward-slashes, underscores, and pluses
-    respectively.
-
-    Paragraphs are separated by empty lines.
-
-    ~monospaced~ and =verbatim= text are delimited by equals signs and tilde
-    respectively.
-
-    : Entire lines can be marked as verbatim by prepending with a colon.
-
-    # Comments are lines prepended with a hash.
-
-    This is a link to the Org.vim repository [[https://github.com/axvr/org.vim]]
-
-    This is also a link to the [[https://github.com/axvr/org.vim][Org.vim repository]]
-    where the text "Org.vim repository" is the title of the link (link text).
-
-    - This is an item in a list.
-    - This is another item in the same list.
-      - This is a sub-item for the above list item.
-        - This is a sub-item for the previous list item.
-    + List items can also be denoted by using a plus sign
-    1. Or by numbering each item.
-    2. Like so.
-      - [ ] List items can also have checkboxes by using open and closing
-            square brackets.
-      - [X] By placing an uppercase X in between the square brackets you can
-            mark the item as "done".
-<
-Org.vim supports a lot more of Org mode's vast syntax than was mentioned here.
-You can learn much more of Org mode's syntax online.
+ 2. USAGE                                                           *org-usage*
 
 When Org.vim is installed, files ending with the extension `.org` will
-automatically have syntax highlighting and folding support enabled.  It can
-also be manually enabled with the following command.
+automatically have syntax highlighting and folding support enabled.  You can
+also manually enable it by setting the 'filetype' option.
 >
     :set filetype=org
 <
 Outline mode doesn't have a file extension like Org mode so you will have to
-enable it manually.  This is simply done by opening the file and runing the
-following command.
+enable it manually.
 >
     :set filetype=outline
 <
 ==============================================================================
- 4. CONFIGURATION                                           *org-configuration*
+ 3. CONFIGURATION                                           *org-configuration*
 
                                                                   *org-folding*
 
@@ -195,7 +128,7 @@ To disable italics only in a single buffer, use this instead:
     let b:org_use_italics = 0
 <
 ==============================================================================
- 5. CHANGE LOG                                                  *org-changelog*
+ 4. CHANGE LOG                                                  *org-changelog*
 
 v1.2 [2020-02-15]~
 
@@ -221,7 +154,7 @@ v1.0 [2019-09-28]~
   * Initial stable release.
 
 ==============================================================================
- 6. LEGAL                                                           *org-legal*
+ 5. LEGAL                                                           *org-legal*
 
 Org.vim is based on the work of many other people (far too many to list here),
 without them org.vim would not have been possible.  The most notable of thse
