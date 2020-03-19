@@ -17,6 +17,33 @@ implementation.  It also allowed me use [[https://github.com/orgzly/orgzly-andro
 *Note*: this project is considered /feature complete/ by the author, so the
 addition of new features will be unlikely.
 
+
+** Installation
+
+Installation of Org.vim can be performed by using your preferred plugin/package
+management tool(s).  If you don't have a Vim package manager I recommend using
+Vim 8 packages.
+
+Just run these 2 commands from your shell.
+
+#+BEGIN_SRC sh
+git clone https://github.com/axvr/org.vim ~/.vim/pack/plugins/start/org
+vim +'helptags ~/.vim/pack/plugins/start/org/doc/' +q
+#+END_SRC
+
+Once installed check out the Org.vim manual (run ~:help org.txt~ to open it) for
+usage information and configuration options.
+
+
+** Screenshots
+
+Different Vim colour schemes will result in different appearances.
+
+| [[https://github.com/romainl/Apprentice][Apprentice]] | [[https://github.com/axvr/photon.vim][Photon]] |
+|--------+------------|
+| [[https://raw.githubusercontent.com/axvr/org.vim/images/apprentice.png]] | [[https://raw.githubusercontent.com/axvr/org.vim/images/photon.png]] |
+
+
 ** Licence
 
 Copyright (c) 2018–2020, Alex Vear.
