@@ -18,10 +18,10 @@ endif
 syntax spell toplevel
 
 " Bold, underine, italic, etc.
-syntax region orgItalic        matchgroup=orgItalicDelimiter        start="[^ \t\k]\@<!\/\k\@=\/\@!" end="\k\@<=\/\@<!\/" keepend contains=@Spell
-syntax region orgBold          matchgroup=orgBoldDelimiter          start="[^ \t\k]\@<!\*\k\@=\*\@!" end="\k\@<=\*\@<!\*" keepend contains=@Spell
-syntax region orgUnderline     matchgroup=orgUnderlineDelimiter     start="[^ \t\k]\@<!_\k\@=_\@!"   end="\k\@<=_\@<!_"   keepend contains=@Spell
-syntax region orgStrikethrough matchgroup=orgStrikethroughDelimiter start="[^ \t\k]\@<!+\k\@=+\@!"   end="\k\@<=+\@<!+"   keepend contains=@Spell
+syntax region orgItalic        matchgroup=orgItalicDelimiter        start="[^ \t\k]\@<!\/\k\@=\/\@!" end="\k\@<=\/\@<!\/" keepend oneline contains=@Spell
+syntax region orgBold          matchgroup=orgBoldDelimiter          start="[^ \t\k]\@<!\*\k\@=\*\@!" end="\k\@<=\*\@<!\*" keepend oneline contains=@Spell
+syntax region orgUnderline     matchgroup=orgUnderlineDelimiter     start="[^ \t\k]\@<!_\k\@=_\@!"   end="\k\@<=_\@<!_"   keepend oneline contains=@Spell
+syntax region orgStrikethrough matchgroup=orgStrikethroughDelimiter start="[^ \t\k]\@<!+\k\@=+\@!"   end="\k\@<=+\@<!+"   keepend oneline contains=@Spell
 
 if org#option('org_use_italics', 1)
     highlight def orgItalic term=italic cterm=italic gui=italic
