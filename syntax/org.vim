@@ -65,12 +65,12 @@ highlight def link orgComment Comment
 
 
 " Headings
-syntax match orgHeading1 /^\s*\*\{1}\s\+.*$/ keepend contains=@Spell,orgTag,orgTodo
-syntax match orgHeading2 /^\s*\*\{2}\s\+.*$/ keepend contains=@Spell,orgTag,orgTodo
-syntax match orgHeading3 /^\s*\*\{3}\s\+.*$/ keepend contains=@Spell,orgTag,orgTodo
-syntax match orgHeading4 /^\s*\*\{4}\s\+.*$/ keepend contains=@Spell,orgTag,orgTodo
-syntax match orgHeading5 /^\s*\*\{5}\s\+.*$/ keepend contains=@Spell,orgTag,orgTodo
-syntax match orgHeading6 /^\s*\*\{6,}\s\+.*$/ keepend contains=@Spell,orgTag,orgTodo
+syntax match orgHeading1 /^\s*\*\{1}\s\+.*$/ keepend contains=@Spell,orgTag,orgTodo,orgMath
+syntax match orgHeading2 /^\s*\*\{2}\s\+.*$/ keepend contains=@Spell,orgTag,orgTodo,orgMath
+syntax match orgHeading3 /^\s*\*\{3}\s\+.*$/ keepend contains=@Spell,orgTag,orgTodo,orgMath
+syntax match orgHeading4 /^\s*\*\{4}\s\+.*$/ keepend contains=@Spell,orgTag,orgTodo,orgMath
+syntax match orgHeading5 /^\s*\*\{5}\s\+.*$/ keepend contains=@Spell,orgTag,orgTodo,orgMath
+syntax match orgHeading6 /^\s*\*\{6,}\s\+.*$/ keepend contains=@Spell,orgTag,orgTodo,orgMath
 
 syntax match orgTag /:\w\{-}:/ contained contains=orgTag
 exec 'syntax keyword orgTodo contained ' . join(org#option('org_state_keywords', ['TODO', 'NEXT', 'DONE']), ' ')
@@ -111,5 +111,22 @@ highlight def link orgHyperCentre Comment
 highlight def link orgHyperLeft Comment
 highlight def link orgHyperRight Comment
 
+" TeX
+" Support for both inline and block based embedded latex
+" eg: $Latex$ for inline or $$ LaTeX $$ for a block
+" Note:
+" - $LaTeX$ uses the tex.vim syntax for its conceal properties
+" - Inspired by https://github.com/vim-pandoc/vim-pandoc-syntax
+" - the conceal settings follows your g:tex_conceal setting for
+"   more info run :h tex-conceal.
+" Ref: https://orgmode.org/manual/LaTeX-fragments.html#LaTeX-fragments
+syntax include @LATEX syntax/tex.vim
+syntax region orgMath     start="\\begin[.*]{.*}"  end="\\end{.*}" 		 keepend contains=@LATEX
+syntax region orgMath     start="\\begin{.*}" 	 end="\\end{.*}" 		 keepend contains=@LATEX
+syntax region orgMath     start="\\\[" 				 end="\\\]" 			 keepend contains=@LATEX
+syntax region orgMath     start="\S\@<=\$\|\$\S\@="   end="\S\@<=\$\|\$\S\@="  keepend oneline contains=@LATEX
+syntax region orgMath     start=/\$\$/                end=/\$\$/              keepend contains=@LATEX
+syntax region orgMath     start=/\\\@<!\\\[/          end=/\\\@<!\\\]/        keepend contains=@LATEX
+hi def link orgMath     String
 
 let b:current_syntax = 'org'
