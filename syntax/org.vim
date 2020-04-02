@@ -121,12 +121,12 @@ highlight def link orgHyperRight Comment
 "   more info run :h tex-conceal.
 " Ref: https://orgmode.org/manual/LaTeX-fragments.html#LaTeX-fragments
 syntax include @LATEX syntax/tex.vim
-syntax region orgMath     start="\\begin\[.*\]{.*}"  end="\\end{.*}" 		 keepend contains=@LATEX
-syntax region orgMath     start="\\begin{.*}" 	 end="\\end{.*}" 		 keepend contains=@LATEX
-syntax region orgMath     start="\\\[" 				 end="\\\]" 			 keepend contains=@LATEX
-syntax region orgMath     start="\S\@<=\$\|\$\S\@="   end="\S\@<=\$\|\$\S\@="  keepend oneline contains=@LATEX
-syntax region orgMath     start=/\$\$/                end=/\$\$/              keepend contains=@LATEX
-syntax region orgMath     start=/\\\@<!\\\[/          end=/\\\@<!\\\]/        keepend contains=@LATEX
+syntax region orgMath     start="\\begin\[.*\]{.*}"  end="\\end{.*}"         keepend contains=@LATEX
+syntax region orgMath     start="\\begin{.*}"        end="\\end{.*}"         keepend contains=@LATEX
+syntax region orgMath     start="\\\["               end="\\\]"              keepend contains=@LATEX
+syntax region orgMath     start="\S\@<=\$\|\$\S\@="  end="\S\@<=\$\|\$\S\@=" keepend oneline contains=@LATEX
+syntax region orgMath     start=/\$\$/               end=/\$\$/              keepend contains=@LATEX
+syntax region orgMath     start=/\\\@<!\\\[/         end=/\\\@<!\\\]/        keepend contains=@LATEX
 hi def link orgMath     String
 
 let b:current_syntax = 'org'
