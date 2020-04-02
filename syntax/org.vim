@@ -127,7 +127,6 @@ syntax region orgMath     start="\\\["               end="\\\]"              kee
 syntax region orgMath     start="\\("                end="\\)"               keepend contains=@LATEX
 syntax region orgMath     start="\S\@<=\$\|\$\S\@="  end="\S\@<=\$\|\$\S\@=" keepend oneline contains=@LATEX
 syntax region orgMath     start=/\$\$/               end=/\$\$/              keepend contains=@LATEX
-syntax region orgMath     start=/\\\@<!\\\[/         end=/\\\@<!\\\]/        keepend contains=@LATEX
 hi def link orgMath     String
 
 let b:current_syntax = 'org'
