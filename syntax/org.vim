@@ -34,6 +34,8 @@ highlight def orgUnderline term=underline cterm=underline gui=underline
 highlight def link orgBoldDelimiter      orgBold
 highlight def link orgUnderlineDelimiter orgUnderline
 
+highlight def link orgStrikethrough Ignore
+highlight def link orgStrikethroughDelimiter orgStrikethrough
 
 " Options
 syntax match  orgOption /^\s*#+\w\+.*$/ keepend
