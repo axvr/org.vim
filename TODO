@@ -2,6 +2,12 @@ MAYBE:
   - Syntax highlight checkboxes and checkbox cookies
   - Separate syntax group for heading delimiters
   - Syntax highlight and indent properties
+  - Hightlight concealed TeX the same as normal text
+  - TeX math fragments in bold, italic, etc. text
+  - Close inline block using same number of starting delimiters.
+  - Grey out strikethrough text.
+  - Try to get text attributes to stack (e.g. underlined text in bold text)
+  - Set a max number of lines to search for end delimiter for bold/italic/etc. to 3 (might not be possible)
 
 UNLIKELY:
   - Implement Emacs's abbreviations (e.g. '\<s<TAB>')

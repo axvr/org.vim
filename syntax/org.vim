@@ -18,10 +18,10 @@ endif
 syntax spell toplevel
 
 " Bold, underine, italic, etc.
-syntax region orgItalic        matchgroup=orgItalicDelimiter        start="[^ \t\k]\@<!\/\k\@=\/\@!" end="\k\@<=\/\@<!\/" keepend contains=@Spell
-syntax region orgBold          matchgroup=orgBoldDelimiter          start="[^ \t\k]\@<!\*\k\@=\*\@!" end="\k\@<=\*\@<!\*" keepend contains=@Spell
-syntax region orgUnderline     matchgroup=orgUnderlineDelimiter     start="[^ \t\k]\@<!_\k\@=_\@!"   end="\k\@<=_\@<!_"   keepend contains=@Spell
-syntax region orgStrikethrough matchgroup=orgStrikethroughDelimiter start="[^ \t\k]\@<!+\k\@=+\@!"   end="\k\@<=+\@<!+"   keepend contains=@Spell
+syntax region orgItalic        matchgroup=orgItalicDelimiter        start="\(^\|[- '"({\]]\)\@<=\/\ze[^ ]" end="^\@!\/\([^\k\/]\|$\)\@=" keepend contains=@Spell
+syntax region orgBold          matchgroup=orgBoldDelimiter          start="\(^\|[- '"({\]]\)\@<=\*\ze[^ ]" end="^\@!\*\([^\k\*]\|$\)\@=" keepend contains=@Spell
+syntax region orgUnderline     matchgroup=orgUnderlineDelimiter     start="\(^\|[- '"({\]]\)\@<=_\ze[^ ]"  end="^\@!_\([^\k_]\|$\)\@="   keepend contains=@Spell
+syntax region orgStrikethrough matchgroup=orgStrikethroughDelimiter start="\(^\|[- '"({\]]\)\@<=+\ze[^ ]"  end="^\@!+\([^\k+]\|$\)\@="   keepend contains=@Spell
 
 if org#option('org_use_italics', 1)
     highlight def orgItalic term=italic cterm=italic gui=italic
@@ -45,8 +45,8 @@ highlight def link orgTitle Title
 
 
 " Code and vervatim text
-syntax region orgCode     matchgroup=orgCodeDelimiter     start="[^ \t\k]\@<!\~\k\@=\~\@!" end="\k\@<=\~\@<!\~" keepend
-syntax region orgVerbatim matchgroup=orgVerbatimDelimiter start="[^ \t\k]\@<!=\k\@==\@!"   end="\k\@<==\@<!="   keepend
+syntax region orgCode     matchgroup=orgCodeDelimiter     start="\(^\|[- '"({\]]\)\@<=\~\ze[^ ]" end="^\@!\~\([^\k\~]\|$\)\@=" keepend
+syntax region orgVerbatim matchgroup=orgVerbatimDelimiter start="\(^\|[- '"({\]]\)\@<==\ze[^ ]"  end="^\@!=\([^\k=]\|$\)\@="   keepend
 syntax match  orgVerbatim /^\s*: .*$/ keepend
 syntax region orgVerbatim matchgroup=orgBlockDelimiter start="\c^\s*#+BEGIN_.*"      end="\c^\s*#+END_.*"      keepend
 syntax region orgCode     matchgroup=orgBlockDelimiter start="\c^\s*#+BEGIN_SRC"     end="\c^\s*#+END_SRC"     keepend
