@@ -130,6 +130,15 @@ To disable italics only in a single buffer, use this instead:
 ==============================================================================
  4. CHANGE LOG                                                  *org-changelog*
 
+v1.3 [2020-05-02]~
+
+  * Added syntax highlighting of LaTeX math fragments.  (Thanks Gavinok!)
+  * Improved detection of inline bold, italic, underline, strike through,
+    verbatim and code syntax.
+  * Grey out "strike through" text by default.
+  * Updated README content and added screenshots.
+  * Removed the "basic Org mode syntax" section from this document.
+
 v1.2 [2020-02-15]~
 
   * Improved syntax highlighting of links and turned off link concealing.
