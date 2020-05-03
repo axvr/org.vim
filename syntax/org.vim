@@ -21,7 +21,7 @@ syntax spell toplevel
 syntax region orgItalic        matchgroup=orgItalicDelimiter        start="\(^\|[- '"({\]]\)\@<=\/\ze[^ ]" end="^\@!\/\([^\k\/]\|$\)\@=" keepend contains=@Spell
 syntax region orgBold          matchgroup=orgBoldDelimiter          start="\(^\|[- '"({\]]\)\@<=\*\ze[^ ]" end="^\@!\*\([^\k\*]\|$\)\@=" keepend contains=@Spell
 syntax region orgUnderline     matchgroup=orgUnderlineDelimiter     start="\(^\|[- '"({\]]\)\@<=_\ze[^ ]"  end="^\@!_\([^\k_]\|$\)\@="   keepend contains=@Spell
-syntax region orgStrikethrough matchgroup=orgStrikethroughDelimiter start="\(^\|[- '"({\]]\)\@<=+\ze[^ ]"  end="^\@!+\([^\k+]\|$\)\@="   keepend contains=@Spell
+syntax region orgStrikethrough matchgroup=orgStrikethroughDelimiter start="\(^\|[ '"({\]]\)\@<=+\ze[^ ]"  end="^\@!+\([^\k+]\|$\)\@="    keepend contains=@Spell
 
 if org#option('org_use_italics', 1)
     highlight def orgItalic term=italic cterm=italic gui=italic
@@ -31,10 +31,9 @@ endif
 
 highlight def orgBold term=bold cterm=bold gui=bold
 highlight def orgUnderline term=underline cterm=underline gui=underline
-highlight def link orgBoldDelimiter      orgBold
+highlight def orgStrikethrough term=strikethrough cterm=strikethrough gui=strikethrough
+highlight def link orgBoldDelimiter orgBold
 highlight def link orgUnderlineDelimiter orgUnderline
-
-highlight def link orgStrikethrough Ignore
 highlight def link orgStrikethroughDelimiter orgStrikethrough
 
 " Options
