@@ -17,11 +17,12 @@ endif
 " Enable spell check for non syntax highlighted text
 syntax spell toplevel
 
+
 " Bold, underine, italic, etc.
 syntax region orgItalic        matchgroup=orgItalicDelimiter        start="\(^\|[- '"({\]]\)\@<=\/\ze[^ ]" end="^\@!\/\([^\k\/]\|$\)\@=" keepend contains=@Spell
 syntax region orgBold          matchgroup=orgBoldDelimiter          start="\(^\|[- '"({\]]\)\@<=\*\ze[^ ]" end="^\@!\*\([^\k\*]\|$\)\@=" keepend contains=@Spell
 syntax region orgUnderline     matchgroup=orgUnderlineDelimiter     start="\(^\|[- '"({\]]\)\@<=_\ze[^ ]"  end="^\@!_\([^\k_]\|$\)\@="   keepend contains=@Spell
-syntax region orgStrikethrough matchgroup=orgStrikethroughDelimiter start="\(^\|[ '"({\]]\)\@<=+\ze[^ ]"  end="^\@!+\([^\k+]\|$\)\@="    keepend contains=@Spell
+syntax region orgStrikethrough matchgroup=orgStrikethroughDelimiter start="\(^\|[ '"({\]]\)\@<=+\ze[^ ]"   end="^\@!+\([^\k+]\|$\)\@="   keepend contains=@Spell
 
 if org#option('org_use_italics', 1)
     highlight def orgItalic term=italic cterm=italic gui=italic
@@ -36,10 +37,10 @@ highlight def link orgBoldDelimiter orgBold
 highlight def link orgUnderlineDelimiter orgUnderline
 highlight def link orgStrikethroughDelimiter orgStrikethrough
 
+
 " Options
 syntax match  orgOption /^\s*#+\w\+.*$/ keepend
 syntax region orgTitle matchgroup=orgOption start="\c^\s*#+TITLE:\s*" end="$" keepend oneline
-
 highlight def link orgBlockDelimiter SpecialComment
 highlight def link orgOption SpecialComment
 highlight def link orgTitle Title
@@ -72,6 +73,8 @@ syntax match orgHeading3 /^\s*\*\{3}\s\+.*$/ keepend contains=@Spell,orgTag,orgT
 syntax match orgHeading4 /^\s*\*\{4}\s\+.*$/ keepend contains=@Spell,orgTag,orgTodo,orgMath
 syntax match orgHeading5 /^\s*\*\{5}\s\+.*$/ keepend contains=@Spell,orgTag,orgTodo,orgMath
 syntax match orgHeading6 /^\s*\*\{6,}\s\+.*$/ keepend contains=@Spell,orgTag,orgTodo,orgMath
+
+syntax cluster orgHeadingGroup contains=orgHeading1,orgHeading2,orgHeading3,orgHeading4,orgHeading5,orgHeading6
 
 syntax match orgTag /:\w\{-}:/ contained contains=orgTag
 exec 'syntax keyword orgTodo contained ' . join(org#option('org_state_keywords', ['TODO', 'NEXT', 'DONE']), ' ')
@@ -106,29 +109,28 @@ syntax match orgHyperLeft /\[\{2}/ contained conceal
 syntax match orgHyperRight /\]\{2}/ contained conceal
 syntax match orgHyperURL /[^][]\{-1,}\]\[/ contains=orgHyperCentre contained conceal
 syntax match orgHyperCentre /\]\[/ contained conceal
+
+syntax cluster orgHyperlinkBracketsGroup contains=orgHyperLeft,orgHyperRight,orgHyperCentre
+syntax cluster orgHyperlinkGroup contains=orgHyperlink,orgHyperURL,orgHyperlinkBracketsGroup
+
 highlight def link orgHyperlink Underlined
 highlight def link orgHyperURL String
 highlight def link orgHyperCentre Comment
 highlight def link orgHyperLeft Comment
 highlight def link orgHyperRight Comment
 
+
 " TeX
-" Support for both inline and block based embedded latex
-" eg: $Latex$ for inline or $$ LaTeX $$ for a block
-" Note:
-" - $LaTeX$ uses the tex.vim syntax for its conceal properties
-" - Inspired by https://github.com/vim-pandoc/vim-pandoc-syntax
-" - the conceal settings follows your g:tex_conceal setting for
-"   more info run :h tex-conceal.
-" Ref: https://orgmode.org/manual/LaTeX-fragments.html#LaTeX-fragments
+"   Ref: https://orgmode.org/manual/LaTeX-fragments.html
 syntax include @LATEX syntax/tex.vim
-syntax region orgMath     start="\\begin\[.*\]{.*}"  end="\\end{.*}"         keepend contains=@LATEX
-syntax region orgMath     start="\\begin{.*}"        end="\\end{.*}"         keepend contains=@LATEX
-syntax region orgMath     start="\\\["               end="\\\]"              keepend contains=@LATEX
-syntax region orgMath     start="\\("                end="\\)"               keepend contains=@LATEX
-syntax region orgMath     start="\S\@<=\$\|\$\S\@="  end="\S\@<=\$\|\$\S\@=" keepend oneline contains=@LATEX
-syntax region orgMath     start=/\$\$/               end=/\$\$/              keepend contains=@LATEX
+syntax region orgMath start="\\begin\[.*\]{.*}"  end="\\end{.*}"         keepend contains=@LATEX
+syntax region orgMath start="\\begin{.*}"        end="\\end{.*}"         keepend contains=@LATEX
+syntax region orgMath start="\\\["               end="\\\]"              keepend contains=@LATEX
+syntax region orgMath start="\\("                end="\\)"               keepend contains=@LATEX
+syntax region orgMath start="\S\@<=\$\|\$\S\@="  end="\S\@<=\$\|\$\S\@=" keepend oneline contains=@LATEX
+syntax region orgMath start=/\$\$/               end=/\$\$/              keepend contains=@LATEX
 syntax match  orgMath /\\\$/ conceal cchar=$
-hi def link orgMath     String
+highlight def link orgMath String
+
 
 let b:current_syntax = 'org'
