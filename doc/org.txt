@@ -165,13 +165,6 @@ v1.0 [2019-09-28]~
 ==============================================================================
  5. LEGAL                                                           *org-legal*
 
-Org.vim is based on the work of many other people (far too many to list here),
-without them org.vim would not have been possible.  The most notable of thse
-works are:
-
-  * GNU Emacs' Outline mode [1].
-  * Carsten Dominik's Org mode [2].
-
 Org.vim is distributed under the same terms as Vim itself.
 
 Copyright (c) 2018–2020, Alex Vear.
@@ -179,6 +172,13 @@ Copyright (c) 2018–2020, Alex Vear.
 A copy of the full licence text should have been provided with this extension
 in the `LICENCE` file.  The license can also be viewed on the web [3] or by
 viewing the |license| section of the |uganda.txt| help doc from within Vim.
+
+Org.vim is based on the work of many other people (far too many to list here),
+without them org.vim would not have been possible.  The most notable of thse
+works are:
+
+  * GNU Emacs' Outline mode [1].
+  * Carsten Dominik's Org mode [2].
 
 ==============================================================================
  7. REFERENCES                                                 *org-references*
