@@ -1,6 +1,6 @@
 #+TITLE: Org mode and Outline mode syntax highlighting for Vim
 
-Org.vim is a very minimal [[https://orgmode.org][Org mode]] and
+Org.vim is a minimal [[https://orgmode.org][Org mode]] and
 [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Outline-Mode.html][Outline mode]]
 plugin for [[https://www.vim.org][Vim]] providing only syntax highlighting and
 folding.

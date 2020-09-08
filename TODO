@@ -1,12 +1,13 @@
-MAYBE:
-  - Highlight groups:
-    - Syntax highlight checkboxes and checkbox cookies
-    - Separate syntax group for heading delimiters
-    - Syntax highlight and indent "properties"
-  - Inline blocks
-    - Try to get text attributes to stack (e.g. underlined text in bold text)
-    - Close inline block using same number of starting delimiters.
-    - Set a max number of lines to search for end delimiter for bold/italic/etc. to 3 (might not be possible)
+* Future
+  - Option to disable TeX highlighting.
+  - Syntax highlight checkboxes and checkbox cookies
+  - Separate syntax group for heading delimiters
+  - Syntax highlight and indent "properties"
 
-UNLIKELY:
+* Maybe
   - Implement Emacs's abbreviations (e.g. '\<s<TAB>')
+
+* Impossible?
+  - Try to get text attributes to stack (e.g. underlined text in bold text)
+  - Close inline block using same number of starting delimiters.
+  - Set a max number of lines to search for end delimiter for bold/italic/etc. to 3 (might not be possible)
