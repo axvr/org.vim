@@ -122,15 +122,17 @@ highlight def link orgHyperRight Comment
 
 " TeX
 "   Ref: https://orgmode.org/manual/LaTeX-fragments.html
-syntax include @LATEX syntax/tex.vim
-syntax region orgMath start="\\begin\[.*\]{.*}"  end="\\end{.*}"         keepend contains=@LATEX
-syntax region orgMath start="\\begin{.*}"        end="\\end{.*}"         keepend contains=@LATEX
-syntax region orgMath start="\\\["               end="\\\]"              keepend contains=@LATEX
-syntax region orgMath start="\\("                end="\\)"               keepend contains=@LATEX
-syntax region orgMath start="\S\@<=\$\|\$\S\@="  end="\S\@<=\$\|\$\S\@=" keepend oneline contains=@LATEX
-syntax region orgMath start=/\$\$/               end=/\$\$/              keepend contains=@LATEX
-syntax match  orgMath /\\\$/ conceal cchar=$
-highlight def link orgMath String
+if org#option('org_highlight_tex', 1)
+    syntax include @LATEX syntax/tex.vim
+    syntax region orgMath start="\\begin\[.*\]{.*}"  end="\\end{.*}"         keepend contains=@LATEX
+    syntax region orgMath start="\\begin{.*}"        end="\\end{.*}"         keepend contains=@LATEX
+    syntax region orgMath start="\\\["               end="\\\]"              keepend contains=@LATEX
+    syntax region orgMath start="\\("                end="\\)"               keepend contains=@LATEX
+    syntax region orgMath start="\S\@<=\$\|\$\S\@="  end="\S\@<=\$\|\$\S\@=" keepend oneline contains=@LATEX
+    syntax region orgMath start=/\$\$/               end=/\$\$/              keepend contains=@LATEX
+    syntax match  orgMath /\\\$/ conceal cchar=$
+    highlight def link orgMath String
+endif
 
 
 let b:current_syntax = 'org'

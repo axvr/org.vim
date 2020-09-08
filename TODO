@@ -1,5 +1,4 @@
 * Future
-  - Option to disable TeX highlighting.
   - Syntax highlight checkboxes and checkbox cookies
   - Separate syntax group for heading delimiters
   - Syntax highlight and indent "properties"
