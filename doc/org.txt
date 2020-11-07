@@ -45,10 +45,16 @@ enable it manually.
 To control how Org.vim handles folding, just use the standard Vim |folding|
 options and commands.
 
-For example if you want to enable or disable folding, just set 'foldenable'.
+For example, if you want to disable folding:
 >
     autocmd FileType org,outline setlocal nofoldenable
 <
+For example, if you want to enable disable folding:
+>
+    autocmd FileType org,outline setlocal foldenable
+    autocmd FileType org,outline setlocal foldmethod=expr
+<
+
 For more information on folding in Vim, refer to |fold.txt|.
 
 ------------------------------------------------------------------------------
