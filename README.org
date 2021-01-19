@@ -28,6 +28,14 @@ git clone https://github.com/axvr/org.vim ~/.vim/pack/plugins/start/org
 vim +'helptags ~/.vim/pack/plugins/start/org/doc/' +q
 #+END_SRC
 
+Make sure the following options are set in your vimrc to enable all
+functionality:
+
+#+BEGIN_SRC
+syntax enable
+filetype plugin indent on
+#+END_SRC
+
 Once installed check out the Org.vim manual (run ~:help org.txt~ to open it) for
 usage information and configuration options.
 
