@@ -91,7 +91,10 @@ highlight def link orgTag Type
 
 " Lists
 syntax match orgUnorderedListMarker "^\s*[-+]\s\+" keepend contains=@Spell
-syntax match orgOrderedListMarker "^\s*[0-9a-zA-Z]\+[.)]\s\+" keepend contains=@Spell
+syntax match orgOrderedListMarker "^\s*\d\+[.)]\s\+" keepend contains=@Spell
+if org#option('org_list_alphabetical_bullets', 0)
+    syntax match orgOrderedListMarker "^\s*\a[.)]\s\+" keepend contains=@Spell
+endif
 highlight def link orgUnorderedListMarker Statement
 highlight def link orgOrderedListMarker orgUnorderedListMarker
 
