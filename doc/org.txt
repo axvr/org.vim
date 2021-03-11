@@ -139,6 +139,22 @@ To disable only in a single buffer, use this instead:
 >
     let b:org_highlight_tex = 0
 <
+------------------------------------------------------------------------------
+          *'b:org_list_alphabetical_bullets'* *'g:org_list_alphabetical_bullets'*
+Value: numeric~
+Default: 0~
+
+Enable/disable alphabetical bullets on ordered lists.  This is disabled by
+default like in Emacs.
+
+To enable for all Org mode files place the following line in your vimrc:
+>
+    let g:org_list_alphabetical_bullets = 1
+<
+To enable only in a single buffer, use this instead:
+>
+    let b:org_list_alphabetical_bullets = 1
+<
 ==============================================================================
  4. CHANGE LOG                                                  *org-changelog*
 
