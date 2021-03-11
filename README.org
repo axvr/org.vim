@@ -31,7 +31,7 @@ vim +'helptags ~/.vim/pack/plugins/start/org/doc/' +q
 Make sure the following options are set in your vimrc to enable all
 functionality:
 
-#+BEGIN_SRC
+#+BEGIN_SRC vim
 syntax enable
 filetype plugin indent on
 #+END_SRC
