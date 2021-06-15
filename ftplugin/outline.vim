@@ -1,6 +1,6 @@
 " Vim filetype plugin for GNU Emacs' Outline mode
 "
-" Maintainer:   Alex Vear <av@axvr.io>
+" Maintainer:   Alex Vear <alex@vear.uk>
 " License:      Vim (see `:help license`)
 " Location:     ftplugin/outline.vim
 " Website:      https://github.com/axvr/org.vim

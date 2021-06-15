@@ -1,6 +1,6 @@
 " Vim filetype detect plugin for GNU Emacs' Org mode
 "
-" Maintainer:   Alex Vear <av@axvr.io>
+" Maintainer:   Alex Vear <alex@vear.uk>
 " License:      Vim (see `:help license`)
 " Location:     ftplugin/org.vim
 " Website:      https://github.com/axvr/org.vim

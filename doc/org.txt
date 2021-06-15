@@ -214,7 +214,7 @@ v1.0 [2019-09-28]~
 
 Org.vim is distributed under the same terms as Vim itself.
 
-Copyright (c) 2018–2020, Alex Vear.
+Copyright (c) 2018–2021, Alex Vear.
 
 A copy of the full licence text should have been provided with this extension
 in the `LICENCE` file.  The license can also be viewed on the web [3] or by

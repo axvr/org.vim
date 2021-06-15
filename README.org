@@ -51,7 +51,7 @@ Different Vim colour schemes will result in different appearances.
 
 ** Licence
 
-Copyright © 2018–2020, Alex Vear.
+Copyright © 2018–2021, Alex Vear.
 
 Org.vim is distributed under the same terms as Vim itself.
 

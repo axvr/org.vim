@@ -1,6 +1,6 @@
 " Helper functions for org.vim
 "
-" Maintainer:   Alex Vear <av@axvr.io>
+" Maintainer:   Alex Vear <alex@vear.uk>
 " License:      Vim (see `:help license`)
 " Location:     autoload/org.vim
 " Website:      https://github.com/axvr/org.vim
