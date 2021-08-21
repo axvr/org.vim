@@ -9,7 +9,7 @@ This plugin aims to replicate Vim's [[https://github.com/tpope/vim-markdown/][ex
 editing experience on Org mode (and Outline mode) files, rather than trying to
 be a full featured Org mode plugin—that is what Emacs is for.  Originally
 created so I could use [[https://github.com/orgzly/orgzly-android/][Orgzly]]
-without worrying Emacs lock-in.
+without worrying about Emacs lock-in.
 
 *Note*: this project is considered /feature complete/ by the author, so the
 addition of new features will be unlikely.
