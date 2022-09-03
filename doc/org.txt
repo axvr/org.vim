@@ -51,7 +51,7 @@ functionality offered by this plugin:
 To control how Org.vim handles folding, just use the standard Vim |folding|
 options and commands.
 
-For example if you want to enable or disable folding, just set 'foldenable'.
+For example, if you want to enable or disable folding, just set 'foldenable'.
 >
     autocmd FileType org,outline setlocal nofoldenable
 <
@@ -105,7 +105,7 @@ This option can be enabled for all buffers like so:
 >
     let g:org_clean_folds = 1
 <
-Alternatively it can be enabled for specific buffers:
+Alternatively, it can be enabled for specific buffers:
 >
     let b:org_clean_folds = 1
 <
@@ -120,7 +120,7 @@ the italic variant of your font.
 As some terminals, terminal multiplexers and monospaced fonts don't support
 the use of italics, org.vim provides a mechanism to disable italic text.
 
-To disable for all Org mode files place the following line in your vimrc:
+To disable for all Org mode files, place the following line in your vimrc:
 >
     let g:org_use_italics = 0
 <
@@ -137,7 +137,7 @@ Enable/disable syntax highlighting of inline (La)TeX blocks[4].  This option
 exists as some Org mode users don't use TeX and may find the highlighting
 annoying.
 
-To disable for all Org mode files place the following line in your vimrc:
+To disable for all Org mode files, place the following line in your vimrc:
 >
     let g:org_highlight_tex = 0
 <
@@ -153,7 +153,7 @@ Default: 0~
 Enable/disable alphabetical bullets on ordered lists.  This is disabled by
 default like in Emacs.
 
-To enable for all Org mode files place the following line in your vimrc:
+To enable for all Org mode files, place the following line in your vimrc:
 >
     let g:org_list_alphabetical_bullets = 1
 <
@@ -221,7 +221,7 @@ in the `LICENCE` file.  The license can also be viewed on the web [3] or by
 viewing the |license| section of the |uganda.txt| help doc from within Vim.
 
 Org.vim is based on the work of many other people (far too many to list here),
-without them org.vim would not have been possible.  The most notable of thse
+without them org.vim would not have been possible.  The most notable of these
 works are:
 
   * GNU Emacs' Outline mode [1].
