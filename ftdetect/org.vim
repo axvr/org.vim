@@ -2,7 +2,7 @@
 "
 " Maintainer:   Alex Vear <alex@vear.uk>
 " License:      Vim (see `:help license`)
-" Location:     ftplugin/org.vim
+" Location:     ftdetect/org.vim
 " Website:      https://github.com/axvr/org.vim
 " Last Change:  2019-09-22
 "
