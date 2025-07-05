@@ -44,9 +44,9 @@ usage information and configuration options.
 
 Different Vim colour schemes will result in different appearances.
 
-| [[https://github.com/romainl/Apprentice][Apprentice]] | [[https://github.com/axvr/photon.vim][Photon]] |
+| [[https://github.com/axvr/raider.vim][Raider]] | Unokai (built-in) |
 |--------+------------|
-| [[https://raw.githubusercontent.com/axvr/org.vim/images/apprentice.png]] | [[https://raw.githubusercontent.com/axvr/org.vim/images/photon.png]] |
+| [[https://raw.githubusercontent.com/axvr/org.vim/images/raider.png]] | [[https://raw.githubusercontent.com/axvr/org.vim/images/unokai.png]] |
 
 
 ** Licence
