@@ -1,0 +1,83 @@
+#+TITLE: Hello world
+
+[[hello world][something]] <-- this is a link
+
+*bold*
+
+/italic/
+
++strikethrough+
+
+_underline_
+
+/aasdf *sdfasdf* sadfasdf/
+
+#+BEGIN_COMMENT
+hello world this is a comment block
+#+END_COMMENT
+
+# comment
+
+1. Foo bar bz baz this is a /not so/ very long line of text in this vim 8.2
+   buffer.
+2. Hello world.
+   1. Foo
+   2. Bar
+
+- foo
+- bar
+
+- This is *foo*
+  - A nested listsdf
++ Using different asdfasd
+  + delimiters /fee/
+
++ Foo bar bz baz this is a /not so/ very long line of text in this vim 8.2 buffer.
+
++ [ ] This is a checkbox.
+  + [ ] Nested checkbox.
+  + [X] This is a checked checkbox with really long text to test how wrapping
+    works.
+  + [ ] Something asdf asdf asdf adfs dsf asdf sadf sadf sadf saf sdf asdf sdf
+    asdf sadf
+
+# * foo not a list item
+#   * Is a list item
+
+
+| Table | Column 1 |
+|-------+----------|
+| item  | _foo_ bar  |
+
+<2003-09-16 Tue 12:00>--<2003-09-16 Tue 12:00>
+<2003-09-16 Tue>--<2003-09-16 Tue>
+[2003-09-16 Tue]
+[2003-09-16 Tue 12:00]--[2003-09-16 Tue 12:00]
+<2003-09-16 Tue>
+<2003-09-16 Sáb>
+<2003-09-16 Tue 12:00-12:30>
+
+#+asdasdsdfasdf: asdfasd
+
+~verbatim~
+: verbatim
+
+=monospace=
+
+#+BEGIN_SRC
+asdfasdfasdf
+#+END_SRC
+
+* Hello world
+** Foo bar
+*** Something :something_else:
+
+******** asdfasdf
+
+hello world
+
+
+
+**** Hello world
+
+something

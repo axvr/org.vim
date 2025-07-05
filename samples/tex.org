@@ -1,0 +1,36 @@
+#+TITLE: Experiment with TeX in Org mode
+#+OPTIONS: tex:t
+
+Hello $\alpha$.
+
+$$\alpha$$
+
+* Foo $\alpha$
+
+*foo $\alpha$ bar*
+
+\neg
+
+a  \begin{equation}                        % arbitrary environments,
+   x=\sqrt{b}                              % even tables, figures
+   \end{equation}                          % etc
+
+  \begin{equation}                        % arbitrary environments,
+  x=\sqrt{b}                              % even tables, figures
+  \end{equation}                          % etc
+
+\begin{equation}                        % arbitrary environments,
+x=\sqrt{b}                              % even tables, figures
+\end{equation}                          % etc
+
+\begin[asdf]{equation2}                 % arbitrary environments,
+x=\sqrt{b}                              % even tables, figures
+\end{equation2}                         % etc
+
+If $a^2=b$ and \( b=2 \), then the solution must be
+either $$ a=+\sqrt{2} $$ or \[ a=-\sqrt{2} \].
+
+$$
+
+a+=\alpha
+$$

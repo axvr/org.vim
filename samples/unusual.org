@@ -1,0 +1,46 @@
+Hello /world/ foo/bar/asdf biz/baz//buz/
+
+~foo~
+
+*hello*
+/_asdf/
+a/foo/
+-/foo/
+#/foo/
+@/foo/
+:/foo/
+_/foo/_
++/foo/+
+3/foo/
+£/foo/
+;/foo/
+,/foo/
+./foo/
+*hello*
+
+/asdföasdf/
+/öasdf/
+
+hello /foo
+bar/
+
+*Foo. Bar.*
+
+Biz
+
+
+Org mode will match unconditionally from first =*= (must be preceded by [- '"(] ) to first one with [ \n\r-'")[}] on the right side.
+
+
+*Hello
+asdf world*
+
+Hello 123468-qwertyuiop[]\aasdfgghjjk;/.,mzxcg!@#$%^&*(*Foo=\\\\]][][[[*asdf]* [asdf*
+
+Bar
+
+*Helloa sdf world
+asdf ** dasf
+Hello 123468-qwertyuiop[]\aasdfgghjjk;'"/.,mzxcg!@#$%^&*(*Foo=\\\\]][ _asd_ [[*asdf]"**[a*sdf*/
+
+Bar

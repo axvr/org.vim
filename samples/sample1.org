@@ -1,0 +1,52 @@
+#+TITLE: Org-mode sample 1
+
+This is some sample text showing off the org-mode syntax for *bold*, /italic/,
+_underlined_ and +strike-through+ text.
+
+Org-mode also has support for single line and block comments.
+
+# This is a single-line comment; denoted by the # at the beginning of the line.
+
+#+BEGIN_COMMENT
+This is a block comment, which is denoted through th use of the delimiters
+found above and below.
+#+END_COMMENT
+
+_this is underline text
+this is more_
+
+~verbatim~
+
+: verbatim
+
+asasdf ** __
+_hello world_ something __ _hello_
+
+_hello world_ _ _ __
+
+=monospace=
+
+#+BEGIN_SRC file-type
+this is a code block
+#+END_SRC
+
+#+BEGIN_EXAMPLE
+some example text
+#+END_EXAMPLE
+
+#+SOME_OPTION: This is an org-mode option
+
+Active date:
+<2019-03-02 23:44>
+Inactive date:
+[2019-03-02 23:44]
+
+[[https://google.com]]
+[[https://google.com][Google]]
+
+* Heading 1
+** Heading 2
+*** Heading 3 :tag:
+**** TODO DONE NEXT DOING Heading 4
+
+# vim: set spell :

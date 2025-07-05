@@ -1,0 +1,45 @@
+#+TITLE: This is a title
+#+Author: Foo bar
+
+* Heading 1
+
+This is *bold* text.
+This is /italic/ text.
+This is _underlined_ text.
+This is +strikethrough+ text.
+This is ~monospace~ text.
+This is =verbatim= text.
+
+Link to [[https://www.orgmode.org][Org mode]] website.
+
+Get Org.vim from here: [[https://github.com/axvr/org.vim]]
+
+# Comment
+
+: Verbatim
+
+#+BEGIN_SRC lisp
+(if (> 1 2)
+  (print "True")
+  (print "False"))
+#+END_SRC
+
+#+BEGIN_COMMENT
+This is a comment block.
+#+END_COMMENT
+
+- Foo.
+- Bar.
+  + Biz.
+    1. Hello.
+    2. World.
+  + Baz.
+   1) Org,
+   2) Mode.
+
+Time stamps:  [2020-03-01]  <2020-02-29>
+
+** TODO Heading 2
+*** Heading 3 :heading:tags:
+**** Heading 4
+and so on...
