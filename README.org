@@ -14,6 +14,11 @@ without worrying about Emacs lock-in.
 *Note*: this project is considered /feature complete/ by the author, so the
 addition of new features will be unlikely.
 
+(This Git repository is mirrored to
+[[https://codeberg.org/axvr/org.vim][Codeberg]],
+[[https://git.sr.ht/~axvr/org.vim][Sourcehut]] and
+[[https://github.com/axvr/org.vim][GitHub]].)
+
 
 ** Installation
 
@@ -24,7 +29,7 @@ Vim 8 packages.
 Just run these 2 commands from your shell.
 
 #+BEGIN_SRC sh
-git clone https://github.com/axvr/org.vim ~/.vim/pack/plugins/start/org
+git clone https://codeberg.org/axvr/org.vim ~/.vim/pack/plugins/start/org
 vim +'helptags ~/.vim/pack/plugins/start/org/doc/' +q
 #+END_SRC
 
@@ -44,9 +49,9 @@ usage information and configuration options.
 
 Different Vim colour schemes will result in different appearances.
 
-| [[https://github.com/axvr/raider.vim][Raider]] | Unokai (built-in) |
+| [[https://codeberg.org/axvr/raider.vim][Raider]] | Unokai (built-in) |
 |--------+------------|
-| [[https://raw.githubusercontent.com/axvr/org.vim/images/raider.png]] | [[https://raw.githubusercontent.com/axvr/org.vim/images/unokai.png]] |
+| [[https://codeberg.org/axvr/org.vim/raw/commit/ab15d41613cb37d0020331b6ff7900adc1116efa/raider.png]] | [[https://codeberg.org/axvr/org.vim/raw/commit/ab15d41613cb37d0020331b6ff7900adc1116efa/unokai.png]] |
 
 
 ** Licence

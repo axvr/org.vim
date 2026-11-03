@@ -3,7 +3,7 @@
 " Maintainer:   Alex Vear <alex@vear.uk>
 " License:      Vim (see `:help license`)
 " Location:     ftplugin/org.vim
-" Website:      https://github.com/axvr/org.vim
+" Website:      https://codeberg.org/axvr/org.vim
 " Last Change:  2020-02-15
 "
 " Reference Specification: Org mode manual

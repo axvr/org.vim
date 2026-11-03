@@ -3,7 +3,7 @@
 " Maintainer:   Alex Vear <alex@vear.uk>
 " License:      Vim (see `:help license`)
 " Location:     syntax/outline.vim
-" Website:      https://github.com/axvr/org.vim
+" Website:      https://codeberg.org/axvr/org.vim
 " Last Change:  2020-08-24
 "
 " Reference Specification: GNU Emacs Manual, section 'Outline Mode'

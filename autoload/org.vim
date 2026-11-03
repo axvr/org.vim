@@ -3,7 +3,7 @@
 " Maintainer:   Alex Vear <alex@vear.uk>
 " License:      Vim (see `:help license`)
 " Location:     autoload/org.vim
-" Website:      https://github.com/axvr/org.vim
+" Website:      https://codeberg.org/axvr/org.vim
 " Last Change:  2020-01-04
 
 " Fallback chain for options. Buffer local --> Global --> default.
