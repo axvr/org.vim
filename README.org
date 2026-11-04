@@ -16,17 +16,15 @@ addition of new features will be unlikely.
 
 (This Git repository is mirrored to
 [[https://codeberg.org/axvr/org.vim][Codeberg]],
-[[https://git.sr.ht/~axvr/org.vim][Sourcehut]] and
+[[https://git.sr.ht/~axvr/org.vim][SourceHut]] and
 [[https://github.com/axvr/org.vim][GitHub]].)
 
 
-** Installation
+* Installation
 
-Installation of Org.vim can be performed by using your preferred plugin/package
-management tool(s).  If you don't have a Vim package manager I recommend using
-Vim 8 packages.
-
-Just run these 2 commands from your shell.
+Installation of Org.vim can be performed by using your preferred plugin
+management solution. If you don't have a Vim package manager I recommend using
+Vim 8 packages by running the following 2 commands in your shell.
 
 #+BEGIN_SRC sh
 git clone https://codeberg.org/axvr/org.vim ~/.vim/pack/plugins/start/org
@@ -45,7 +43,7 @@ Once installed check out the Org.vim manual (run ~:help org.txt~ to open it) for
 usage information and configuration options.
 
 
-** Licence
+* Licence
 
 Copyright © 2018–2021, Alex Vear.
 
